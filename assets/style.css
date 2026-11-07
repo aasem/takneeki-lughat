@@ -224,7 +224,12 @@ code { background: var(--paper-2); padding: 1px 6px; border-radius: 5px; font-si
 
 .foot { max-width: 1080px; margin: 0 auto; padding: 28px 16px 110px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .foot p { margin: 0; max-width: 62ch; }
+.foot .quote { margin: 0 0 10px; }
+.foot blockquote { margin: 0; }
 .foot .motto { font-size: 22px; color: var(--gold); }
+.foot .motto-en { font-family: Fraunces, serif; font-style: italic; font-size: 17px; color: var(--ink-soft); margin-top: 2px; }
+.foot figcaption { font-size: 12.5px; margin-top: 6px; }
+.foot figcaption .ur-inline { font-size: 14px; }
 .foot .copy { font-size: 12.5px; letter-spacing: .02em; }
 .chips { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
 .tags { border: 0; padding: 0; margin: 0; }
