@@ -1,5 +1,5 @@
 import {
-  FIELDS, cleanEn, cleanUr, enKey, urKey, fieldKey, makeId, shardFor, validateEntry,
+  FIELDS, cleanEn, cleanUr, enKey, urKey, fieldsOf, makeId, shardFor, validateEntry,
   findConflicts, normaliseEntry, serialiseShard,
 } from "./core.js";
 
@@ -121,13 +121,10 @@ async function loadData() {
 function rebuild() {
   S.all = Object.values(S.shards).flat();
   for (const e of S.all) { e._k = enKey(e.en); e._u = urKey(e.ur); e._t = `${e.note || ""} ${e.cite || ""}`.toLowerCase(); }
-  const fields = new Set(FIELDS);
-  S.all.forEach(e => fields.add(e.field || "General"));
-  const used = [...new Set(S.all.map(e => e.field || "General"))].sort();
+  const used = [...new Set([...FIELDS, ...S.all.flatMap(fieldsOf)])];
   $("#fieldFilter").replaceChildren(el("option", { value: "" }, "All fields"), ...used.map(f => el("option", { value: f, selected: f === S.field }, f)));
-  $("#fieldList").replaceChildren(...[...fields].sort().map(f => el("option", { value: f })));
   $("#statTerms").textContent = S.all.length.toLocaleString();
-  $("#statFields").textContent = used.length;
+  $("#statFields").textContent = new Set(S.all.flatMap(fieldsOf)).size;
   $("#statPeople").textContent = new Set(S.all.map(e => e.by).filter(Boolean)).size;
   renderAlpha();
   render();
@@ -137,7 +134,7 @@ function rebuild() {
 function search() {
   const raw = S.q.trim();
   let list = S.all;
-  if (S.field) list = list.filter(e => (e.field || "General") === S.field);
+  if (S.field) list = list.filter(e => fieldsOf(e).includes(S.field));
   if (!raw) {
     if (S.letter) return list.filter(e => (S.letter === "#" ? !/^[a-z]/.test(e._k) : e._k.startsWith(S.letter))).sort((a, b) => a._k.localeCompare(b._k));
     return [...list].sort((a, b) => (b.updated || "").localeCompare(a.updated || "") || a._k.localeCompare(b._k));
@@ -174,7 +171,6 @@ function highlight(text, q) {
 }
 
 const ICON_EDIT = '<svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m14 6 4 4"/></svg>';
-const ICON_LINK = '<svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>';
 const ICON_BOOK = '<svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></svg>';
 
 function card(e) {
@@ -182,14 +178,13 @@ function card(e) {
   return el("li", { class: "term", id: `t-${e.id}` },
     el("div", { class: "term-top" },
       el("h3", { class: "term-en", lang: "en" }, ...highlight(e.en, S.q.trim())),
-      el("span", { class: "chip" }, e.field || "General")),
+      el("div", { class: "chips" }, fieldsOf(e).map(f => el("span", { class: "chip" }, f)))),
     el("p", { class: "term-ur", lang: "ur", dir: "rtl" }, e.ur),
     e.note ? el("p", { class: "term-note" }, e.note) : null,
     e.cite ? (() => { const p = el("p", { class: "term-cite" }); p.innerHTML = ICON_BOOK; p.append(e.cite); return p; })() : null,
     el("div", { class: "term-foot" },
       el("span", {}, [e.by ? `by ${e.by}` : "", e.updated ? fmtDate(e.updated) : ""].filter(Boolean).join(" · ")),
       el("div", { class: "term-actions" },
-        btn(ICON_LINK, "Link", () => copyLink(e)),
         btn(ICON_EDIT, "Edit", () => openEditor(e)))));
 }
 
@@ -221,11 +216,6 @@ function renderAlpha() {
 }
 function setLetter(l) { S.letter = l; S.q = ""; $("#q").value = ""; S.shown = PAGE; renderAlpha(); render(); }
 
-function copyLink(e) {
-  const url = `${location.origin}${location.pathname}#t=${encodeURIComponent(e.id)}`;
-  (navigator.clipboard?.writeText(url) || Promise.reject()).then(() => toast("Link copied"), () => prompt("Copy this link:", url));
-}
-
 function jumpToHash() {
   const m = location.hash.match(/^#t=(.+)$/);
   if (!m) return;
@@ -249,7 +239,12 @@ function openEditor(entry = null, prefill = "") {
   $("#editorTitle").textContent = entry ? "Edit term" : "Add a term";
   F("en").value = entry ? entry.en : prefill;
   F("ur").value = entry ? entry.ur : "";
-  F("field").value = entry ? entry.field || "General" : (S.field || store.get("tl.lastField") || "");
+  let last = [];
+  try { last = JSON.parse(store.get("tl.lastFields") || "[]"); } catch {}
+  const pre = entry ? fieldsOf(entry) : S.field ? [S.field] : last;
+  const opts = [...new Set([...FIELDS, ...pre])];
+  $("#fieldTags").replaceChildren(...opts.map(f => el("label", { class: "tag" },
+    el("input", { type: "checkbox", name: "fields", value: f, checked: pre.includes(f) }), el("span", {}, f))));
   F("note").value = entry?.note || "";
   F("cite").value = entry?.cite || store.get("tl.lastCite") || "";
   if (entry) F("cite").value = entry.cite || "";
@@ -266,11 +261,12 @@ function draftFromForm() {
   const now = new Date().toISOString();
   const o = S.editing;
   const d = normaliseEntry({
-    en: F("en").value, ur: F("ur").value, field: F("field").value || "General",
+    en: F("en").value, ur: F("ur").value,
+    fields: [...form.querySelectorAll('input[name="fields"]:checked')].map(i => i.value),
     note: F("note").value, cite: F("cite").value,
     by: o ? o.by || S.user?.login : S.user?.login, added: o?.added || now, updated: now,
   });
-  d.id = makeId(d.en, d.field);
+  d.id = makeId(d.en, d.fields);
   return d;
 }
 
@@ -283,12 +279,12 @@ function runChecks() {
     const errs = validateEntry(d).filter(m => (F("en").value || F("ur").value) || !/required/.test(m));
     const c = d.en ? findConflicts(d, S.all, { ignoreId: S.editing?.id }) : { block: [], warn: [], info: [] };
     // Unchanged edit? nothing to save.
-    const same = S.editing && ["en", "ur", "field", "note", "cite"].every(k => (S.editing[k] || (k === "field" ? "General" : "")) === (d[k] || (k === "field" ? "General" : "")));
+    const same = S.editing && ["en", "ur", "note", "cite"].every(k => (S.editing[k] || "") === (d[k] || "")) && fieldsOf(S.editing).join() === d.fields.join();
     const sec = (cls, icon, title, items) => items.length ? el("div", { class: `check ${cls}` },
       el("h4", {}, icon, " ", title),
       el("ul", {}, items.slice(0, 6).map(({ entry, why }) => el("li", {},
         el("strong", {}, entry.en), el("span", { class: "ur-inline", lang: "ur", dir: "rtl" }, entry.ur),
-        el("small", {}, `${entry.field || "General"} — ${why}`))))) : null;
+        el("small", {}, `${fieldsOf(entry).join(" & ")} — ${why}`))))) : null;
     const parts = [
       errs.length && (F("en").value || F("ur").value) ? el("div", { class: "check block" }, el("h4", {}, "⚠ Fix before saving"), el("ul", {}, errs.map(m => el("li", {}, m)))) : null,
       sec("block", "⛔", "Already in the dictionary — cannot add again", c.block),
@@ -314,7 +310,7 @@ form.addEventListener("submit", async ev => {
   const d = draftFromForm();
   const errs = validateEntry(d);
   if (errs.length) { $("#formError").textContent = errs.join(". "); return; }
-  store.set("tl.lastField", d.field || "General", true);
+  store.set("tl.lastFields", JSON.stringify(d.fields), true);
   if (!S.editing && d.cite) store.set("tl.lastCite", d.cite, true);
   if (!S.user) return suggestViaIssue(d);
   const btn = $("#saveBtn"); btn.disabled = true; btn.textContent = "Saving…";
@@ -341,7 +337,7 @@ async function saveEntry(draft, original) {
     if (c.block.length) throw new UserError(`Duplicate: “${c.block[0].entry.en}” was just added by @${c.block[0].entry.by || "someone"}. Nothing was saved.`);
     target.push(draft);
     return fromP === toP ? { [toP]: target } : { [toP]: target, [fromP]: source };
-  }, `${verb}: ${draft.en} → ${draft.ur}${draft.field ? ` [${draft.field}]` : ""}\n\nvia Takneeki Lughat web editor`);
+  }, `${verb}: ${draft.en} → ${draft.ur}${draft.fields.length ? ` [${draft.fields.join(", ")}]` : ""}\n\nvia web editor`);
   for (const [p, entries] of Object.entries(changed)) S.shards[p] = entries;
   rebuild();
   toast(original ? "Changes saved ✓" : `“${draft.en}” added ✓`);
@@ -406,11 +402,23 @@ $("#q").addEventListener("input", e => {
 $("#fieldFilter").addEventListener("change", e => { S.field = e.target.value; S.shown = PAGE; render(); });
 $("#moreBtn").addEventListener("click", () => { S.shown += PAGE * 2; render(); });
 $("#addBtn").addEventListener("click", () => openEditor(null, ARABIC.test(S.q) ? "" : S.q.trim()));
-$("#printBtn").addEventListener("click", () => { S.shown = 100000; render(); setTimeout(() => window.print(), 50); });
-$("#exportBtn").addEventListener("click", () => {
-  const data = S.all.map(({ _k, _u, _t, ...e }) => e);
-  const a = el("a", { href: URL.createObjectURL(new Blob([JSON.stringify(data, null, 1)], { type: "application/json" })), download: `takneeki-lughat-${new Date().toISOString().slice(0, 10)}.json` });
-  document.body.append(a); a.click(); a.remove();
+// Theme: auto (follow device) → light → dark
+const THEMES = ["auto", "light", "dark"];
+const applyTheme = () => {
+  const t = store.get("tl.theme") || "auto";
+  if (t === "auto") document.documentElement.removeAttribute("data-theme");
+  else document.documentElement.setAttribute("data-theme", t);
+  const label = { auto: "Theme: automatic", light: "Theme: light", dark: "Theme: dark" }[t];
+  $("#themeToggle").setAttribute("aria-label", label); $("#themeToggle").title = label;
+  $("#themeToggle").innerHTML = t === "light"
+    ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
+    : t === "dark" ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg>'
+    : '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>';
+};
+$("#themeToggle").addEventListener("click", () => {
+  const t = store.get("tl.theme") || "auto";
+  store.set("tl.theme", THEMES[(THEMES.indexOf(t) + 1) % 3], true); applyTheme();
+  toast($("#themeToggle").title);
 });
 document.addEventListener("keydown", e => {
   if (e.key === "/" && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) && !document.querySelector("dialog[open]")) { e.preventDefault(); $("#q").focus(); }
@@ -425,7 +433,7 @@ window.addEventListener("hashchange", jumpToHash);
 
 // ---------------------------------------------------------------- boot
 (async function boot() {
-  applyScript();
+  applyScript(); applyTheme();
   const tok = store.get("tl.token");
   if (tok) { try { await verifyToken(tok); } catch { S.token = null; S.user = null; } }
   updateSignInUi();

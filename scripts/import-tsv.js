@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Bulk-import a TSV (english <TAB> urdu [<TAB> page]) into the shards,
 // skipping anything that would be a duplicate.
-//   node scripts/import-tsv.js FILE.tsv --field Physics --cite "Source, p. {page}" [--by name]
+//   node scripts/import-tsv.js FILE.tsv --field Physics,Mathematics --cite "Source, p. {page}" [--by name]
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -25,10 +25,10 @@ for (const line of readFileSync(file, "utf8").split(/\r?\n/)) {
   if (!line.trim() || line.startsWith("#")) continue;
   const [en, ur, page] = line.split("\t");
   const e = normaliseEntry({
-    en, ur, field: opt("field"), cite: (opt("cite") || "").replace("{page}", page || "?"),
+    en, ur, fields: opt("field").split(",").map(f => f.trim()).filter(Boolean), cite: (opt("cite") || "").replace("{page}", page || "?"),
     by: opt("by"), added: now, updated: now,
   });
-  e.id = makeId(e.en, e.field);
+  e.id = makeId(e.en, e.fields);
   const bad = validateEntry(e);
   if (bad.length) { console.log(`skip (invalid) ${en}: ${bad.join("; ")}`); skipped++; continue; }
   const p = shardFor(e.en, manifest.shards);

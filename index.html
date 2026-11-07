@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Takneeki Lughat · تکنیکی لغت</title>
-<meta name="description" content="An open, student-built English–Urdu dictionary of scientific and technical terms.">
+<title>English–Urdu Dictionary of Scientific and Technical Terms · فرہنگِ علمی و فنی اصطلاحات</title>
+<meta name="description" content="An open English–Urdu dictionary of scientific and technical terms, compiled as a collective volunteer project.">
 <meta name="theme-color" content="#14213d">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,22 +16,23 @@
 <header class="masthead">
   <div class="girih" aria-hidden="true"></div>
   <nav class="topbar">
-    <a class="brand" href="./" aria-label="Takneeki Lughat home">
-      <img src="assets/icon.svg" alt="" width="34" height="34"><span>Takneeki&nbsp;Lughat</span>
+    <a class="brand" href="./" aria-label="Home">
+      <img src="assets/icon.svg" alt="" width="34" height="34"><span class="ur-inline" lang="ur" dir="rtl">فرہنگِ اصطلاحات</span>
     </a>
     <div class="topbar-actions">
+      <button class="ghost" id="themeToggle" title="Theme" aria-label="Theme: automatic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button>
       <button class="ghost" id="scriptToggle" title="Switch Urdu typeface" aria-label="Switch Urdu typeface"><span class="ur-inline">نستعلیق</span></button>
       <button class="ghost" id="signInBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.1 10.1 0 0 0 22 12.2C22 6.6 17.5 2 12 2z"/></svg><span id="signInLabel">Contributor sign-in</span></button>
     </div>
   </nav>
 
   <div class="hero">
-    <p class="eyebrow">Open lexicon of science &amp; technology · English → Urdu</p>
+    <p class="eyebrow">Open reference for scientific translation</p>
     <h1>
-      <span class="ur-title" lang="ur" dir="rtl">تکنیکی لغت</span>
-      <span class="en-title">Takneeki Lughat</span>
+      <span class="ur-title" lang="ur" dir="rtl">فرہنگِ علمی و فنی اصطلاحات</span>
+      <span class="en-title">English–Urdu Dictionary of Scientific and Technical Terms</span>
     </h1>
-    <p class="lede">A shared, citable vocabulary for translating scientific textbooks into Urdu — built term by term by our students.</p>
+    <p class="lede">A shared, citable vocabulary for translating scientific textbooks into Urdu.</p>
     <dl class="stats" id="stats">
       <div><dt>Terms</dt><dd id="statTerms">—</dd></div>
       <div><dt>Fields</dt><dd id="statFields">—</dd></div>
@@ -54,10 +55,6 @@
 
   <div class="resulthead">
     <h2 id="resultTitle">Recently added</h2>
-    <div class="resultactions">
-      <button class="link" id="exportBtn" title="Download the whole dictionary as JSON">Download JSON</button>
-      <button class="link" id="printBtn" title="Print the current list">Print list</button>
-    </div>
   </div>
 
   <div id="status" class="status" role="status" aria-live="polite">Loading dictionary…</div>
@@ -70,8 +67,9 @@
 </button>
 
 <footer class="foot">
-  <p>Every entry is plain JSON in <a href="https://github.com/aasem/takneeki-lughat" id="repoLink">GitHub</a> — free to host, free to copy, with full history of who changed what.</p>
-  <p class="ur-inline" lang="ur" dir="rtl">علم کی زبان، اپنی زبان</p>
+  <p class="motto ur-inline" lang="ur" dir="rtl">اصطلاح، علم کی کنجی ہے</p>
+  <p class="note">A collective volunteer project. Entries are compiled from published glossaries and dictionaries; the source of every entry is cited with it.</p>
+  <p class="copy">© 2026 Asim Bakhshi · National University of Sciences and Technology (NUST)</p>
 </footer>
 
 <!-- Add / edit term -->
@@ -94,14 +92,13 @@
           <small>Separate alternatives with “ / ”.</small>
         </label>
       </div>
+      <fieldset class="fld tags">
+        <legend>Field(s) <b>*</b> <i>— tick every subject the term is used in</i></legend>
+        <div class="tagrow" id="fieldTags"></div>
+      </fieldset>
       <section class="checks" id="checks" aria-live="polite"></section>
       <label class="confirm" id="confirmRow" hidden>
         <input type="checkbox" id="confirmBox"> I have looked at the similar terms above and this is genuinely a different entry.
-      </label>
-      <label class="fld">
-        <span>Field</span>
-        <input name="field" list="fieldList" maxlength="60" placeholder="General — or Physics, Chemistry, …" autocomplete="off">
-        <datalist id="fieldList"></datalist>
       </label>
       <label class="fld">
         <span>Explanation &amp; etymology <i>optional</i></span>

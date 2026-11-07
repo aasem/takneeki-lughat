@@ -1,10 +1,14 @@
-# Takneeki Lughat · تکنیکی لغت
+# English–Urdu Dictionary of Scientific and Technical Terms
+## فرہنگِ علمی و فنی اصطلاحات
 
-An open, student-built **English → Urdu dictionary of scientific and technical terms**, made to support translating science and engineering textbooks into Urdu.
+A collective volunteer project: an open **English → Urdu dictionary of scientific and technical terms**, made to support translating science and engineering textbooks into Urdu. (`takneeki-lughat` is the repository name.)
+
+© 2026 Asim Bakhshi · National University of Sciences and Technology (NUST)
 
 **Live:** https://aasem.github.io/takneeki-lughat/
 
 - Search in English or Urdu (Nastaliq or Naskh display), filter by field, browse A–Z
+- Light, dark or automatic theme
 - Add or correct terms from a phone or a laptop
 - Strong duplicate protection (see below)
 - No server, no database, no hosting cost: the dictionary is plain JSON in this repo, served by GitHub Pages, with full Git history of who changed what
@@ -14,14 +18,14 @@ An open, student-built **English → Urdu dictionary of scientific and technical
 Each term is one line of JSON in `data/<letter>.json`:
 
 ```json
-{"id":"centripetal-acceleration.physics","en":"centripetal acceleration","ur":"مرکز جو اسراع","field":"Physics","note":"…","cite":"NCPUL Physics Glossary (2001), p. 10","by":"github-user","added":"…","updated":"…"}
+{"id":"centripetal-acceleration.physics","en":"centripetal acceleration","ur":"مرکز جو اسراع","fields":["Physics"],"note":"…","cite":"NCPUL Physics Glossary (2001), p. 10","by":"github-user","added":"…","updated":"…"}
 ```
 
 | key | required | meaning |
 |---|---|---|
 | `en` | ✅ | English term, in natural order ("angular acceleration", not "acceleration, angular") |
 | `ur` | ✅ | Urdu equivalent; alternatives separated by ` / ` |
-| `field` | – | Subject (Physics, Chemistry, …). Omitted means *General* |
+| `fields` | ✅ | One or more subject tags. Currently `Physics`, `Mathematics`; add more to `FIELDS` in `assets/core.js` |
 | `note` | – | Explanation, usage, etymology of the Urdu coinage |
 | `cite` | – | Source / reference |
 | `id`, `by`, `added`, `updated` | auto | Set by the editor |
@@ -46,7 +50,7 @@ The same rules (in [`assets/core.js`](assets/core.js)) run in three places:
 2. **At the moment of saving** — the editor re-reads the latest data from GitHub, re-checks, and commits atomically. If someone else saved in the meantime, the commit is rejected and redone on top of their change, so two students cannot add the same term at once.
 3. **On every push** — the GitHub Action `Validate dictionary` checks the whole dataset and marks the commit red if anything slips through (e.g. a manual edit).
 
-Two terms count as the **same** when, in the same field, they match after ignoring case, spacing, hyphens, punctuation, accents, bracketed abbreviations and glossary inversion: `Co-efficient of aberration` = `coefficient of aberration`, `Acceleration, centripetal` = `centripetal acceleration`. The same English term in a different field (e.g. *cell* in Biology and Physics) is allowed after confirmation.
+Two terms count as the **same** when they share at least one field tag and match after ignoring case, spacing, hyphens, punctuation, accents, bracketed abbreviations and glossary inversion: `Co-efficient of aberration` = `coefficient of aberration`, `Acceleration, centripetal` = `centripetal acceleration`. A word used in several subjects with the same Urdu (e.g. *vector*) is one entry tagged with both fields. A separate entry with no field in common is allowed only after confirmation, for genuinely different senses with different Urdu.
 
 Urdu is normalised too (Arabic ي/ك → Urdu ی/ک, diacritics and ZWNJ ignored), so search and checks are not fooled by keyboard differences.
 
@@ -55,7 +59,7 @@ Urdu is normalised too (Arabic ي/ك → Urdu ی/ک, diacritics and ZWNJ ignored
 ```bash
 node scripts/validate.js         # full check (same as CI)
 node scripts/validate.js --fix   # re-sort / re-format shards
-node scripts/import-tsv.js words.tsv --field Chemistry --cite "Source, p. {page}" --by yourname
+node scripts/import-tsv.js words.tsv --field Physics,Mathematics --cite "Source, p. {page}" --by yourname
 ```
 
 The TSV format is `english<TAB>urdu<TAB>page`. Duplicates are skipped automatically.

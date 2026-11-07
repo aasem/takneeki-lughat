@@ -3,13 +3,11 @@
 // GitHub Actions can never disagree.
 
 export const SCHEMA_VERSION = 1;
-export const ALLOWED_KEYS = ["id", "en", "ur", "field", "note", "cite", "by", "added", "updated"];
+export const ALLOWED_KEYS = ["id", "en", "ur", "fields", "note", "cite", "by", "added", "updated"];
 
-export const FIELDS = [
-  "General", "Physics", "Chemistry", "Biology", "Mathematics", "Statistics",
-  "Computer Science", "Electrical Engineering", "Electronics", "Civil Engineering",
-  "Mechanical Engineering", "Chemical Engineering", "Astronomy", "Earth Sciences", "Medicine",
-];
+// Subject tags. A term may carry several (e.g. "vector": Mathematics + Physics).
+// To open a new subject, add it here — the app and the validator both read this list.
+export const FIELDS = ["Physics", "Mathematics"];
 
 const DASHES = /[‐-―−]/g;
 const ARABIC_SCRIPT = /[؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿]/;
@@ -57,8 +55,12 @@ export function urKey(s) {
     .replace(/[\s\/،,؛۔.\-\(\)\[\]"'«»]+/g, "");
 }
 
-export function fieldKey(f) {
-  return cleanEn(f || "General").toLowerCase();
+/** The subject tags of an entry, cleaned, de-duplicated and in FIELDS order. */
+export function fieldsOf(e) {
+  const raw = Array.isArray(e?.fields) ? e.fields : e?.field ? [e.field] : [];
+  const out = [...new Set(raw.map(f => cleanEn(f)).filter(Boolean))];
+  const rank = f => { const i = FIELDS.indexOf(f); return i < 0 ? 999 : i; };
+  return out.sort((a, b) => rank(a) - rank(b) || a.localeCompare(b));
 }
 
 export function slug(s) {
@@ -66,9 +68,9 @@ export function slug(s) {
     .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "term";
 }
 
-export function makeId(en, field) {
-  const f = fieldKey(field);
-  return f === "general" ? slug(en) : `${slug(en)}.${slug(f)}`;
+export function makeId(en, fields = []) {
+  const f = [...fields].map(slug).sort().join("-");
+  return f ? `${slug(en)}.${f}` : slug(en);
 }
 
 /** Which shard file a term lives in: longest matching prefix of its key, else "0". */
@@ -92,7 +94,11 @@ export function validateEntry(e) {
   else if (!ARABIC_SCRIPT.test(ur)) errs.push("Urdu equivalent must be written in Urdu script");
   else if (ur.length > 240) errs.push("Urdu equivalent is too long (max 240)");
   if (!enKey(en) && en) errs.push("English term has no letters or digits");
-  for (const [k, max] of [["note", 3000], ["cite", 600], ["field", 60], ["by", 60]]) {
+  if (e.fields != null && !Array.isArray(e.fields)) errs.push('"fields" must be a list');
+  const fs = fieldsOf(e);
+  if (!fs.length) errs.push("Choose at least one field");
+  for (const f of fs) if (!FIELDS.includes(f)) errs.push(`Unknown field "${f}" (allowed: ${FIELDS.join(", ")})`);
+  for (const [k, max] of [["note", 3000], ["cite", 600], ["by", 60]]) {
     if (e[k] != null && typeof e[k] !== "string") errs.push(`"${k}" must be text`);
     else if (e[k] && e[k].length > max) errs.push(`"${k}" is too long (max ${max})`);
   }
@@ -130,16 +136,17 @@ function onlyEndingDiffers(a, b) {
  */
 export function findConflicts(cand, entries, { ignoreId = null } = {}) {
   const out = { block: [], warn: [], info: [] };
-  const k = enKey(cand.en), wk = enWordKey(cand.en), f = fieldKey(cand.field), uk = urKey(cand.ur);
+  const k = enKey(cand.en), wk = enWordKey(cand.en), fs = fieldsOf(cand), uk = urKey(cand.ur);
   if (!k) return out;
   const tol = k.length >= 10 ? 2 : k.length >= 5 ? 1 : 0;
-  const id = cand.id || makeId(cand.en, cand.field);
+  const id = cand.id || makeId(cand.en, fs);
   for (const e of entries) {
     if (ignoreId && e.id === ignoreId) continue;
-    const ek = enKey(e.en);
-    if (ek === k && fieldKey(e.field) === f) { out.block.push({ entry: e, why: "Same English term already exists in this field" }); continue; }
+    const ek = enKey(e.en), efs = fieldsOf(e);
+    const shared = efs.filter(f => fs.includes(f));
+    if (ek === k && (shared.length || !fs.length)) { out.block.push({ entry: e, why: shared.length ? `Already in the dictionary under ${shared.join(" & ")}` : "Same English term already exists" }); continue; }
     if (e.id === id) { out.block.push({ entry: e, why: "An entry with this ID already exists" }); continue; }
-    if (ek === k) { out.warn.push({ entry: e, why: `Same English term exists under “${e.field || "General"}”` }); continue; }
+    if (ek === k) { out.warn.push({ entry: e, why: `Exists under ${efs.join(" & ")} — if the Urdu is the same, edit that entry and add your field instead` }); continue; }
     if (wk && enWordKey(e.en) === wk) { out.warn.push({ entry: e, why: "Same words in a different order or number" }); continue; }
     if (tol && !onlyEndingDiffers(k, ek) && lev(k, ek, tol) <= tol) { out.warn.push({ entry: e, why: "Very similar spelling — possible typo" }); continue; }
     if (uk && urKey(e.ur) === uk) out.info.push({ entry: e, why: "Same Urdu equivalent used for another term" });
@@ -148,14 +155,13 @@ export function findConflicts(cand, entries, { ignoreId = null } = {}) {
 }
 
 export function compareEntries(a, b) {
-  return enKey(a.en).localeCompare(enKey(b.en)) || fieldKey(a.field).localeCompare(fieldKey(b.field)) || a.id.localeCompare(b.id);
+  return enKey(a.en).localeCompare(enKey(b.en)) || fieldsOf(a).join().localeCompare(fieldsOf(b).join()) || a.id.localeCompare(b.id);
 }
 
 /** Normalise an entry for storage (drops empty optional fields, fixes code points). */
 export function normaliseEntry(e) {
-  const out = { id: e.id || makeId(e.en, e.field), en: cleanEn(e.en), ur: cleanUr(e.ur) };
-  const field = cleanEn(e.field);
-  if (field && field.toLowerCase() !== "general") out.field = field;
+  const fields = fieldsOf(e);
+  const out = { id: e.id || makeId(e.en, fields), en: cleanEn(e.en), ur: cleanUr(e.ur), fields };
   for (const k of ["note", "cite", "by", "added", "updated"]) {
     const v = String(e[k] || "").replace(/\r\n/g, "\n").trim();
     if (v) out[k] = v;

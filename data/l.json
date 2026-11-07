@@ -1,5 +1,5 @@
 [
-{"id":"law-of-aberration.physics","en":"law of aberration","ur":"فتور قانون","field":"Physics","cite":"NCPUL, Glossary of Technical Terms: Physics (English–Urdu), New Delhi 2001, p. 7","by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
-{"id":"light-absorption.physics","en":"light absorption","ur":"نور جاذبیت","field":"Physics","cite":"NCPUL, Glossary of Technical Terms: Physics (English–Urdu), New Delhi 2001, p. 10","by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
-{"id":"linear-acceleration.physics","en":"linear acceleration","ur":"خطی اسراع","field":"Physics","cite":"NCPUL, Glossary of Technical Terms: Physics (English–Urdu), New Delhi 2001, p. 11","by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"}
+{"id":"law-of-aberration.physics","en":"law of aberration","ur":"فتور قانون","fields":["Physics"],"cite":"NCPUL, Glossary of Technical Terms: Physics (English–Urdu), New Delhi 2001, p. 7","by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
+{"id":"light-absorption.physics","en":"light absorption","ur":"نور جاذبیت","fields":["Physics"],"cite":"NCPUL, Glossary of Technical Terms: Physics (English–Urdu), New Delhi 2001, p. 10","by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
+{"id":"linear-acceleration.physics","en":"linear acceleration","ur":"خطی اسراع","fields":["Physics"],"cite":"NCPUL, Glossary of Technical Terms: Physics (English–Urdu), New Delhi 2001, p. 11","by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"}
 ]

@@ -9,7 +9,7 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  validateEntry, shardFor, enKey, fieldKey, enWordKey, serialiseShard, normaliseEntry,
+  validateEntry, shardFor, enKey, fieldsOf, enWordKey, serialiseShard, normaliseEntry,
 } from "../assets/core.js";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -38,11 +38,16 @@ for (const p of prefixes) {
     if (shardFor(e.en, prefixes) !== p) err(rel, `${where}: belongs in data/${shardFor(e.en, prefixes)}.json`);
     if (ids.has(e.id)) err(rel, `${where}: duplicate id "${e.id}" (also in ${ids.get(e.id)})`);
     ids.set(e.id, rel);
-    const k = `${enKey(e.en)}|${fieldKey(e.field)}`;
-    if (keys.has(k)) err(rel, `${where}: DUPLICATE of “${keys.get(k).en}” (${keys.get(k).id})`);
-    else keys.set(k, e);
-    const w = `${enWordKey(e.en)}|${fieldKey(e.field)}`;
-    if (words.has(w) && enKey(words.get(w).en) !== enKey(e.en)) warn(rel, `${where}: possible duplicate of “${words.get(w).en}” (same words)`);
+    // Duplicate = same canonical English key sharing at least one field tag.
+    const k = enKey(e.en), fs = fieldsOf(e);
+    for (const prev of keys.get(k) || []) {
+      const shared = fieldsOf(prev).filter(f => fs.includes(f));
+      if (shared.length) err(rel, `${where}: DUPLICATE of “${prev.en}” (${prev.id}) in ${shared.join(" & ")}`);
+      else warn(rel, `${where}: same English as “${prev.en}” under ${fieldsOf(prev).join(" & ")} — intended as a separate sense?`);
+    }
+    keys.set(k, [...(keys.get(k) || []), e]);
+    const w = enWordKey(e.en);
+    if (words.has(w) && enKey(words.get(w).en) !== k) warn(rel, `${where}: possible duplicate of “${words.get(w).en}” (same words)`);
     else words.set(w, e);
   });
   total += list.length;
