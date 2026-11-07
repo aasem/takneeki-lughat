@@ -143,6 +143,8 @@ select, .fld input, .fld textarea {
 .term-cite { font-size: 12.5px; color: var(--muted); display: flex; gap: 6px; align-items: flex-start; }
 .term-cite svg { width: 14px; height: 14px; flex: none; margin-top: 3px; }
 .term-foot { display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--line); margin-top: 8px; padding-top: 8px; font-size: 12.5px; color: var(--muted); gap: 8px; }
+.term-foot a.by { color: var(--teal); font-weight: 600; text-decoration: none; }
+.term-foot a.by:hover { text-decoration: underline; text-underline-offset: 2px; }
 .term-actions { display: flex; gap: 2px; }
 .term-actions button { border: 0; background: none; color: var(--ink-soft); padding: 6px 8px; border-radius: 8px; font-size: 13px; display: inline-flex; gap: 5px; align-items: center; }
 .term-actions button:hover { background: var(--paper-2); color: var(--ink); }

@@ -183,7 +183,12 @@ function card(e) {
     e.note ? el("p", { class: "term-note" }, e.note) : null,
     e.cite ? (() => { const p = el("p", { class: "term-cite" }); p.innerHTML = ICON_BOOK; p.append(e.cite); return p; })() : null,
     el("div", { class: "term-foot" },
-      el("span", {}, [e.by ? `by ${e.by}` : "", e.updated ? fmtDate(e.updated) : ""].filter(Boolean).join(" · ")),
+      el("span", {},
+        e.by ? ["by ", /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/.test(e.by)
+          ? el("a", { class: "by", href: `https://github.com/${e.by}`, target: "_blank", rel: "noopener", title: `${e.by} on GitHub` }, e.by)
+          : e.by] : null,
+        e.by && e.updated ? " · " : null,
+        e.updated ? fmtDate(e.updated) : null),
       el("div", { class: "term-actions" },
         btn(ICON_EDIT, "Edit", () => openEditor(e)))));
 }
