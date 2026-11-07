@@ -1,0 +1,10 @@
+{
+  "name": "takneeki-lughat",
+  "private": true,
+  "type": "module",
+  "description": "Open English–Urdu dictionary of scientific and technical terms",
+  "scripts": {
+    "validate": "node scripts/validate.js",
+    "fix": "node scripts/validate.js --fix"
+  }
+}

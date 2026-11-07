@@ -1,0 +1,19 @@
+name: Validate dictionary
+
+on:
+  push:
+    paths: ["data/**", "assets/core.js", "scripts/**", ".github/workflows/validate.yml"]
+  pull_request:
+    paths: ["data/**", "assets/core.js", "scripts/**"]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check schema, shard placement and duplicates
+        run: node scripts/validate.js

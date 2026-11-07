@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Takneeki Lughat · تکنیکی لغت</title>
+<meta name="description" content="An open, student-built English–Urdu dictionary of scientific and technical terms.">
+<meta name="theme-color" content="#14213d">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="girih" aria-hidden="true"></div>
+  <nav class="topbar">
+    <a class="brand" href="./" aria-label="Takneeki Lughat home">
+      <img src="assets/icon.svg" alt="" width="34" height="34"><span>Takneeki&nbsp;Lughat</span>
+    </a>
+    <div class="topbar-actions">
+      <button class="ghost" id="scriptToggle" title="Switch Urdu typeface" aria-label="Switch Urdu typeface"><span class="ur-inline">نستعلیق</span></button>
+      <button class="ghost" id="signInBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.1 10.1 0 0 0 22 12.2C22 6.6 17.5 2 12 2z"/></svg><span id="signInLabel">Contributor sign-in</span></button>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <p class="eyebrow">Open lexicon of science &amp; technology · English → Urdu</p>
+    <h1>
+      <span class="ur-title" lang="ur" dir="rtl">تکنیکی لغت</span>
+      <span class="en-title">Takneeki Lughat</span>
+    </h1>
+    <p class="lede">A shared, citable vocabulary for translating scientific textbooks into Urdu — built term by term by our students.</p>
+    <dl class="stats" id="stats">
+      <div><dt>Terms</dt><dd id="statTerms">—</dd></div>
+      <div><dt>Fields</dt><dd id="statFields">—</dd></div>
+      <div><dt>Contributors</dt><dd id="statPeople">—</dd></div>
+    </dl>
+  </div>
+</header>
+
+<main>
+  <section class="searchbar" role="search">
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search in English or اردو …" autocomplete="off" spellcheck="false" enterkeyhint="search" aria-label="Search terms">
+      <kbd>/</kbd>
+    </label>
+    <select id="fieldFilter" aria-label="Filter by field"><option value="">All fields</option></select>
+  </section>
+
+  <nav class="alpha" id="alpha" aria-label="Browse by letter"></nav>
+
+  <div class="resulthead">
+    <h2 id="resultTitle">Recently added</h2>
+    <div class="resultactions">
+      <button class="link" id="exportBtn" title="Download the whole dictionary as JSON">Download JSON</button>
+      <button class="link" id="printBtn" title="Print the current list">Print list</button>
+    </div>
+  </div>
+
+  <div id="status" class="status" role="status" aria-live="polite">Loading dictionary…</div>
+  <ol id="results" class="results"></ol>
+  <button id="moreBtn" class="more" hidden>Show more</button>
+</main>
+
+<button class="fab" id="addBtn" aria-label="Add a new term">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Add term</span>
+</button>
+
+<footer class="foot">
+  <p>Every entry is plain JSON in <a href="https://github.com/aasem/takneeki-lughat" id="repoLink">GitHub</a> — free to host, free to copy, with full history of who changed what.</p>
+  <p class="ur-inline" lang="ur" dir="rtl">علم کی زبان، اپنی زبان</p>
+</footer>
+
+<!-- Add / edit term -->
+<dialog id="editor" class="sheet" aria-labelledby="editorTitle">
+  <form id="termForm" method="dialog" novalidate>
+    <header class="sheet-head">
+      <h3 id="editorTitle">Add a term</h3>
+      <button type="button" class="icon" data-close aria-label="Close">✕</button>
+    </header>
+    <div class="sheet-body">
+      <div class="grid2">
+        <label class="fld">
+          <span>English term <b>*</b></span>
+          <input name="en" required maxlength="160" autocomplete="off" autocapitalize="none" spellcheck="true" placeholder="e.g. centripetal acceleration">
+          <small>Write it in natural order (“angular acceleration”, not “acceleration, angular”).</small>
+        </label>
+        <label class="fld">
+          <span>Urdu equivalent <b>*</b></span>
+          <input name="ur" required maxlength="240" lang="ur" dir="rtl" class="ur-input" autocomplete="off" placeholder="مرکز جو اسراع">
+          <small>Separate alternatives with “ / ”.</small>
+        </label>
+      </div>
+      <section class="checks" id="checks" aria-live="polite"></section>
+      <label class="confirm" id="confirmRow" hidden>
+        <input type="checkbox" id="confirmBox"> I have looked at the similar terms above and this is genuinely a different entry.
+      </label>
+      <label class="fld">
+        <span>Field</span>
+        <input name="field" list="fieldList" maxlength="60" placeholder="General — or Physics, Chemistry, …" autocomplete="off">
+        <datalist id="fieldList"></datalist>
+      </label>
+      <label class="fld">
+        <span>Explanation &amp; etymology <i>optional</i></span>
+        <textarea name="note" rows="3" maxlength="3000" placeholder="Meaning, usage, and how the Urdu word is formed — e.g. اسراع from Arabic سرعت ‘speed’ (verbal noun, form IV)."></textarea>
+      </label>
+      <label class="fld">
+        <span>Citation / reference <i>optional</i></span>
+        <input name="cite" maxlength="600" placeholder="Source, edition, page — e.g. NCPUL Physics Glossary (2001), p. 10">
+      </label>
+
+      <p class="form-error" id="formError" role="alert"></p>
+    </div>
+    <footer class="sheet-foot">
+      <span class="who" id="whoSaves"></span>
+      <button type="button" class="ghost" data-close>Cancel</button>
+      <button type="submit" class="primary" id="saveBtn">Save to dictionary</button>
+    </footer>
+  </form>
+</dialog>
+
+<!-- Contributor sign-in -->
+<dialog id="signin" class="sheet narrow" aria-labelledby="signinTitle">
+  <form id="signinForm" method="dialog">
+    <header class="sheet-head">
+      <h3 id="signinTitle">Contributor sign-in</h3>
+      <button type="button" class="icon" data-close aria-label="Close">✕</button>
+    </header>
+    <div class="sheet-body" id="signinBody">
+      <p>Saving goes straight into the dictionary on GitHub, under your own GitHub name. You need to be added as a collaborator on the repository first — ask your instructor.</p>
+      <ol class="steps">
+        <li>On GitHub open <a href="https://github.com/settings/tokens/new?scopes=public_repo&description=Takneeki%20Lughat" target="_blank" rel="noopener">Settings → Developer settings → Tokens (classic) → Generate new token</a>.</li>
+        <li>Tick only <code>public_repo</code>, choose an expiry (e.g. 90 days), generate, and copy the token.</li>
+        <li>Paste it below. It stays on this device only.</li>
+      </ol>
+      <label class="fld"><span>Access token</span>
+        <input name="token" id="tokenInput" type="password" autocomplete="off" spellcheck="false" placeholder="ghp_…"></label>
+      <label class="confirm"><input type="checkbox" id="rememberBox" checked> Remember on this device</label>
+      <p class="form-error" id="signinError" role="alert"></p>
+    </div>
+    <footer class="sheet-foot">
+      <button type="button" class="ghost" id="signOutBtn" hidden>Sign out</button>
+      <button type="submit" class="primary" id="verifyBtn">Verify &amp; sign in</button>
+    </footer>
+  </form>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script type="module" src="assets/app.js"></script>
+</body>
+</html>
