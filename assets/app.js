@@ -1,7 +1,7 @@
 import {
   FIELDS, cleanEn, cleanUr, enKey, urKey, fieldsOf, makeId, shardFor, validateEntry,
   findConflicts, normaliseEntry, serialiseShard,
-} from "./core.js?v=20261110e";
+} from "./core.js?v=20261110f";
 
 // ---------------------------------------------------------------- config
 const REPO = "aasem/takneeki-lughat";
@@ -229,9 +229,13 @@ function openDetail(e) {
 
 function render() {
   const res = search();
-  const title = S.q.trim() ? `${res.length.toLocaleString()} result${res.length === 1 ? "" : "s"} for “${S.q.trim()}”`
-    : S.letter ? `Terms under ${S.letter.toUpperCase()}` : "Recently added";
-  $("#resultTitle").textContent = title + (S.field ? ` · ${S.field === "__flagged" ? "Flagged for changes" : S.field}` : "");
+  const n = res.length, hw = `${n.toLocaleString()} headword${n === 1 ? "" : "s"}`;
+  const scope = S.field === "__flagged" ? " · flagged for changes" : S.field ? ` · ${S.field}` : "";
+  const q = S.q.trim();
+  $("#resultTitle").replaceChildren(...(
+    q ? [el("span", { class: "rt-main" }, `“${q}”`), el("span", { class: "rt-count" }, `${hw} found${scope}`)]
+    : S.letter ? [el("span", { class: "rt-letter" }, S.letter === "#" ? "#" : S.letter.toUpperCase()), el("span", { class: "rt-count" }, `${hw}${scope}`)]
+    : [el("span", { class: "rt-main" }, "Recently added"), el("span", { class: "rt-count" }, `${hw} in total${scope}`)]));
   const list = $("#results");
   if (!res.length) {
     list.replaceChildren(el("li", { class: "empty" },

@@ -108,6 +108,7 @@
 {"id":"clebsch-gordan-coefficients.physics","en":"Clebsch-Gordan coefficients","ur":"کلیبش و گورڈن عددی سر","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"cliff.mathematics","en":"cliff","ur":"چٹان، کھڑی چٹان","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"clock-signal.mathematics","en":"clock signal","ur":"ساعتی اشارہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"clockwise.mathematics","en":"clockwise","ur":"گھڑی وار","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"clockwise-anti-clock-wise.mathematics","en":"clockwise, anti clock wise","ur":"گھڑی وار رخ، گھڑی مخالف رخ","fields":["Mathematics"],"note":"Suggestions: گھڑی کی سوئی کے رخ، گھڑی کی سمت","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"clone.physics","en":"clone","ur":"قلمیہ","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"closed-loop.mathematics","en":"closed loop","ur":"بند دائرہ","fields":["Mathematics"],"note":"Suggestions: بند حلقہ (میٹرک)","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},

@@ -128,6 +128,8 @@
 {"id":"trajectory.mathematics","en":"trajectory","ur":"خط حرکت، مَسیر","fields":["Mathematics"],"note":"Suggestions: گزرگاہ","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"transadmittance.mathematics","en":"transadmittance","ur":"فراوانی نما","fields":["Mathematics"],"note":"Suggestions: پزیرش نما","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"transcendental-equations.mathematics","en":"transcendental equations","ur":"ماورائی مساوات","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"transcendental-function.mathematics","en":"transcendental function","ur":"ماورائی تفاعل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
+{"id":"transcendental-number.mathematics","en":"transcendental number","ur":"ماورائی عدد","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"transconductance-transresistance.mathematics","en":"transconductance, transresistance","ur":"موصلیت-نما، مزاحمت-نما","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"transducer.mathematics","en":"transducer","ur":"مبدل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"transfer.mathematics","en":"transfer","ur":"منتقل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},

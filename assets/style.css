@@ -120,7 +120,11 @@ select, .fld input, .fld textarea {
 .alpha button:disabled { opacity: .3; cursor: default; }
 
 .resulthead { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 14px 0 10px; flex-wrap: wrap; }
-.resulthead h2 { margin: 0; font-family: Fraunces, serif; font-weight: 600; font-size: 22px; }
+.resulthead h2 { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.rt-letter { font-family: Fraunces, serif; font-size: 40px; line-height: 1; color: var(--gold); font-weight: 700; }
+.rt-main { font-family: Fraunces, serif; font-weight: 600; }
+.rt-count { font-family: "Instrument Sans", sans-serif; font-size: 14px; font-weight: 500; color: var(--muted); letter-spacing: .01em; }
+.resulthead h2.x { margin: 0; font-family: Fraunces, serif; font-weight: 600; font-size: 22px; }
 .link { border: 0; background: none; color: var(--teal); padding: 0; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
 .status { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
 .status:empty { display: none; }
