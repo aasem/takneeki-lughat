@@ -154,10 +154,9 @@ export function findConflicts(cand, entries, { ignoreId = null } = {}) {
   for (const e of entries) {
     if (ignoreId && e.id === ignoreId) continue;
     const ek = enKey(e.en), efs = fieldsOf(e);
-    const shared = efs.filter(f => fs.includes(f));
-    if (ek === k && (shared.length || !fs.length)) { out.block.push({ entry: e, why: shared.length ? `Already in the dictionary under ${shared.join(" & ")}` : "Same English term already exists" }); continue; }
+    // One entry per English term: a term used in several subjects gets several tags, never a second entry.
+    if (ek === k) { out.block.push({ entry: e, why: `Already in the dictionary (${efs.join(" & ")}) — edit that entry and add your field tag instead` }); continue; }
     if (e.id === id) { out.block.push({ entry: e, why: "An entry with this ID already exists" }); continue; }
-    if (ek === k) { out.warn.push({ entry: e, why: `Exists under ${efs.join(" & ")} — if the Urdu is the same, edit that entry and add your field instead` }); continue; }
     if (lk && enLooseKey(e.en) === lk) { out.warn.push({ entry: e, why: "Same term with a different qualifier or word order" }); continue; }
     if (wk && enWordKey(e.en) === wk) { out.warn.push({ entry: e, why: "Same words in a different order or number" }); continue; }
     if (tol && !onlyEndingDiffers(k, ek) && lev(k, ek, tol) <= tol) { out.warn.push({ entry: e, why: "Very similar spelling — possible typo" }); continue; }

@@ -40,11 +40,8 @@ for (const p of prefixes) {
     ids.set(e.id, rel);
     // Duplicate = same canonical English key sharing at least one field tag.
     const k = enKey(e.en), fs = fieldsOf(e);
-    for (const prev of keys.get(k) || []) {
-      const shared = fieldsOf(prev).filter(f => fs.includes(f));
-      if (shared.length) err(rel, `${where}: DUPLICATE of “${prev.en}” (${prev.id}) in ${shared.join(" & ")}`);
-      else warn(rel, `${where}: same English as “${prev.en}” under ${fieldsOf(prev).join(" & ")} — intended as a separate sense?`);
-    }
+    // One entry per English term (multiple subjects = multiple tags on that entry).
+    for (const prev of keys.get(k) || []) err(rel, `${where}: DUPLICATE of “${prev.en}” (${prev.id}) — merge into one entry and tag both fields`);
     keys.set(k, [...(keys.get(k) || []), e]);
     const w = enWordKey(e.en);
     if (words.has(w) && enKey(words.get(w).en) !== k) warn(rel, `${where}: possible duplicate of “${words.get(w).en}” (same words)`);
