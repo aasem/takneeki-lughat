@@ -217,7 +217,7 @@
 {"id":"disturb.physics","en":"disturb","ur":"چھیڑ، سکون خراب کرنا","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"disturbance.mathematics","en":"disturbance","ur":"خلل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"disturb-to-disturb-a-particle-disturbed.physics","en":"disturb, to disturb a particle,disturbed","ur":"اضطراب، ذرہ کو مضطرب کرنا","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
-{"id":"diurnal-aberration.physics","en":"diurnal aberration","ur":"یومی فتور","fields":["Physics"],"cite":"NCPUL, Glossary of Technical Terms: Physics (English–Urdu), New Delhi 2001, p. 7","by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
+{"id":"diurnal-aberration.physics","en":"diurnal aberration","ur":"یومی فتور","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"divergence-divergent.mathematics","en":"divergence, divergent","ur":"انفراج، منفرج","fields":["Mathematics"],"note":"Suggestions: منفرجیت؟؟","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"divergence-factor-element.mathematics","en":"divergence factor, element","ur":"انفراجی جزو، رکن","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"divergence-non-divergence.mathematics","en":"divergence: non divergence","ur":"عدم انفراج","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},

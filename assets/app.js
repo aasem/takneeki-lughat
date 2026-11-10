@@ -7,7 +7,7 @@ import {
 const REPO = "aasem/takneeki-lughat";
 const BRANCH = "main";
 const API = "https://api.github.com";
-const PAGE = 60;
+const PAGE = 96;
 
 // ---------------------------------------------------------------- state
 const S = {
@@ -37,7 +37,7 @@ const store = {
   del(k) { try { localStorage.removeItem(k); sessionStorage.removeItem(k); } catch {} },
 };
 const ARABIC = /[؀-ۿ]/;
-const fmtDate = iso => { const d = new Date(iso); return isNaN(d) ? "" : d.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }); };
+const fmtDate = iso => { const d = new Date(iso); if (isNaN(d)) return ""; const o = { day: "numeric", month: "short" }; if (d.getFullYear() !== new Date().getFullYear()) o.year = "numeric"; return d.toLocaleDateString(undefined, o); };
 
 function toast(msg, ms = 3200) {
   const t = $("#toast");
@@ -120,7 +120,7 @@ async function loadData() {
 
 function rebuild() {
   S.all = Object.values(S.shards).flat();
-  for (const e of S.all) { e._k = enKey(e.en); e._u = urKey(e.ur); e._t = `${e.note || ""} ${e.cite || ""} ${(e.examples || []).map(x => x.en).join(" ")}`.toLowerCase(); e._xu = (e.examples || []).map(x => urKey(x.ur)).join("|"); }
+  for (const e of S.all) { e._k = enKey(e.en); e._u = urKey(e.ur); e._t = `${e.note || ""} ${(e.examples || []).map(x => x.en).join(" ")}`.toLowerCase(); e._xu = (e.examples || []).map(x => urKey(x.ur)).join("|"); }
   const used = [...new Set([...FIELDS, ...S.all.flatMap(fieldsOf)])];
   const nFlag = S.all.filter(e => e.flag).length;
   $("#fieldFilter").replaceChildren(el("option", { value: "" }, "All fields"), ...used.map(f => el("option", { value: f, selected: f === S.field }, f)),
@@ -175,10 +175,9 @@ function highlight(text, q) {
 
 const ICON_FLAG = '<svg viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg>';
 const ICON_EDIT = '<svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m14 6 4 4"/></svg>';
-const ICON_BOOK = '<svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></svg>';
 
 function card(e) {
-  const btn = (html, label, fn) => { const b = el("button", { type: "button", "aria-label": label, onclick: fn }); b.innerHTML = html + `<span>${label}</span>`; return b; };
+  const btn = (html, label, fn) => { const b = el("button", { type: "button", "aria-label": label, title: label, onclick: fn }); b.innerHTML = html; return b; };
   const flagBtn = el("button", {
     type: "button", class: "flag", "aria-pressed": String(!!e.flag),
     "aria-label": e.flag ? "Flagged for changes — tap to remove flag" : "Flag for changes",
@@ -189,14 +188,13 @@ function card(e) {
   return el("li", { class: "term" + (e.flag ? " flagged" : ""), id: `t-${e.id}` },
     el("div", { class: "term-top" },
       el("h3", { class: "term-en", lang: "en" }, ...highlight(e.en, S.q.trim())),
-      el("div", { class: "chips" }, fieldsOf(e).map(f => el("span", { class: "chip" }, f)))),
-    el("p", { class: "term-ur", lang: "ur", dir: "rtl" }, e.ur),
+      el("p", { class: "term-ur", lang: "ur", dir: "rtl" }, e.ur)),
     e.examples?.length ? el("ul", { class: "term-ex", "aria-label": "Examples" }, e.examples.map(x =>
       el("li", {}, el("span", { class: "ex-en", lang: "en" }, x.en), el("span", { class: "ex-ur", lang: "ur", dir: "rtl" }, x.ur)))) : null,
-    e.note ? el("p", { class: "term-note" }, e.note) : null,
-    e.cite ? (() => { const p = el("p", { class: "term-cite" }); p.innerHTML = ICON_BOOK; p.append(e.cite); return p; })() : null,
+    e.note ? el("p", { class: "term-note", title: "Tap to expand", onclick: ev => ev.currentTarget.classList.toggle("open") }, e.note) : null,
     el("div", { class: "term-foot" },
-      el("span", {},
+      el("span", { class: "chips" }, fieldsOf(e).map(f => el("span", { class: "chip" }, f))),
+      el("span", { class: "meta" },
         e.by ? ["by ", /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/.test(e.by)
           ? el("a", { class: "by", href: `https://github.com/${e.by}`, target: "_blank", rel: "noopener", title: `${e.by} on GitHub` }, e.by)
           : e.by] : null,
@@ -266,8 +264,6 @@ function openEditor(entry = null, prefill = "") {
     el("input", { type: "checkbox", name: "fields", value: f, checked: pre.includes(f) }), el("span", {}, f))));
   F("note").value = entry?.note || "";
   F("examples").value = (entry?.examples || []).map(x => `${x.en} = ${x.ur}`).join("\n");
-  F("cite").value = entry?.cite || store.get("tl.lastCite") || "";
-  if (entry) F("cite").value = entry.cite || "";
   $("#formError").textContent = "";
   $("#confirmBox").checked = false;
   $("#saveBtn").textContent = S.user ? (entry ? "Save changes" : "Save to dictionary") : "Suggest on GitHub";
@@ -283,7 +279,7 @@ function draftFromForm() {
   const d = normaliseEntry({
     en: F("en").value, ur: F("ur").value,
     fields: [...form.querySelectorAll('input[name="fields"]:checked')].map(i => i.value),
-    note: F("note").value, cite: F("cite").value, examples: parseExamples(F("examples").value),
+    note: F("note").value, examples: parseExamples(F("examples").value),
     by: o ? o.by || S.user?.login : S.user?.login, added: o?.added || now, updated: now,
   });
   d.id = makeId(d.en, d.fields);
@@ -307,7 +303,7 @@ function runChecks() {
     const errs = validateEntry(d).filter(m => (F("en").value || F("ur").value) || !/required/.test(m));
     const c = d.en ? findConflicts(d, S.all, { ignoreId: S.editing?.id }) : { block: [], warn: [], info: [] };
     // Unchanged edit? nothing to save.
-    const same = S.editing && ["en", "ur", "note", "cite"].every(k => (S.editing[k] || "") === (d[k] || "")) && fieldsOf(S.editing).join() === d.fields.join()
+    const same = S.editing && ["en", "ur", "note"].every(k => (S.editing[k] || "") === (d[k] || "")) && fieldsOf(S.editing).join() === d.fields.join()
       && JSON.stringify(S.editing.examples || []) === JSON.stringify(d.examples || []);
     const sec = (cls, icon, title, items) => items.length ? el("div", { class: `check ${cls}` },
       el("h4", {}, icon, " ", title),
@@ -340,7 +336,6 @@ form.addEventListener("submit", async ev => {
   const errs = validateEntry(d);
   if (errs.length) { $("#formError").textContent = errs.join(". "); return; }
   store.set("tl.lastFields", JSON.stringify(d.fields), true);
-  if (!S.editing && d.cite) store.set("tl.lastCite", d.cite, true);
   if (!S.user) return suggestViaIssue(d);
   const btn = $("#saveBtn"); btn.disabled = true; btn.textContent = "Saving…";
   try { await saveEntry(d, S.editing); $("#editor").close(); }

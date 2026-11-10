@@ -20,7 +20,7 @@ A collective volunteer project: an open **English → Urdu dictionary of scienti
 Each term is one line of JSON in `data/<letter>.json`:
 
 ```json
-{"id":"centripetal-acceleration.physics","en":"centripetal acceleration","ur":"مرکز جو اسراع","fields":["Physics"],"note":"…","cite":"NCPUL Physics Glossary (2001), p. 10","by":"github-user","added":"…","updated":"…"}
+{"id":"centripetal-acceleration.physics","en":"centripetal acceleration","ur":"مرکز جو اسراع","fields":["Physics"],"note":"…","by":"github-user","added":"…","updated":"…"}
 ```
 
 | key | required | meaning |
@@ -30,7 +30,6 @@ Each term is one line of JSON in `data/<letter>.json`:
 | `fields` | ✅ | One or more subject tags: `Physics`, `Mathematics`, `General`. Add more to `FIELDS` in `assets/core.js` |
 | `examples` | – | Phrases showing the term in use: `[{"en": "…", "ur": "…"}]` — not headwords themselves |
 | `note` | – | Explanation, usage, etymology of the Urdu coinage |
-| `cite` | – | Source / reference |
 | `id`, `by`, `added`, `updated` | auto | Set by the editor |
 
 ## How students contribute
@@ -62,10 +61,10 @@ Urdu is normalised too (Arabic ي/ك → Urdu ی/ک, diacritics and ZWNJ ignored
 ```bash
 node scripts/validate.js         # full check (same as CI)
 node scripts/validate.js --fix   # re-sort / re-format shards
-node scripts/import-tsv.js words.tsv --field Physics,Mathematics --cite "Source, p. {page}" --by yourname
+node scripts/import-tsv.js words.tsv --field Physics,Mathematics --by yourname
 ```
 
-The TSV format is `english<TAB>urdu<TAB>page`. Duplicates are skipped automatically.
+The TSV format is `english<TAB>urdu`. Duplicates are skipped automatically.
 
 ## Scaling
 
@@ -73,11 +72,11 @@ Terms are split into one file per starting letter (`data/a.json` …, `data/0.js
 
 ## Seed data
 
-The first 110 terms are from pages 7–11 of *Glossary of Technical Terms: Physics (English–Urdu)*, National Council for Promotion of Urdu Language, New Delhi, 2001, transcribed by hand from the scan, with page citations. Sub-entries were expanded into natural order (e.g. "Aberration — –, chromatic" → "chromatic aberration"). They should be checked against the print copy.
+The first 110 terms are from pages 7–11 of *Glossary of Technical Terms: Physics (English–Urdu)*, National Council for Promotion of Urdu Language, New Delhi, 2001, transcribed by hand from the scan. Sub-entries were expanded into natural order (e.g. "Aberration — –, chromatic" → "chromatic aberration"). They should be checked against the print copy.
 
 ### Project word list (November 2026)
 
-About 2,900 terms were imported from the team spreadsheet `english_to_urdu_words.ods` (sheet *words*), tagged **Mathematics**. These entries carry no citation. Repeated rows were merged: differing Urdu renderings are kept side by side (`… / …`), and the spreadsheet's "suggestions" column is kept in the explanation as *Suggestions*. Colour codings were not imported. Twelve rows had no Urdu (or no English) and were not imported: 350, 362, 1090, 1709, 1757, 1965, 1967, 2246, 2768, 2832, 2912, 2913.
+About 2,900 terms were imported from the team spreadsheet `english_to_urdu_words.ods` (sheet *words*), tagged **Mathematics**. Repeated rows were merged: differing Urdu renderings are kept side by side (`… / …`), and the spreadsheet's "suggestions" column is kept in the explanation as *Suggestions*. Colour codings were not imported. Twelve rows had no Urdu (or no English) and were not imported: 350, 362, 1090, 1709, 1757, 1965, 1967, 2246, 2768, 2832, 2912, 2913.
 
 ### Quantum mechanics word list (November 2026)
 
@@ -85,4 +84,4 @@ About 2,900 terms were imported from the team spreadsheet `english_to_urdu_words
 
 ## Licence
 
-The dictionary is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) licence (full text in [LICENSE](LICENSE)). You may copy, print, translate and adapt it, including in textbooks, provided you credit *English–Urdu Dictionary of Scientific and Technical Terms* (Asim Bakhshi and Khalid Khan) and share adaptations under the same licence. Material from sources cited on individual entries remains subject to its owners' rights.
+The dictionary is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) licence (full text in [LICENSE](LICENSE)). You may copy, print, translate and adapt it, including in textbooks, provided you credit *English–Urdu Dictionary of Scientific and Technical Terms* (Asim Bakhshi and Khalid Khan) and share adaptations under the same licence. Material drawn from published glossaries remains subject to its owners’ rights.
