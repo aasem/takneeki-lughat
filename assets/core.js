@@ -3,7 +3,7 @@
 // GitHub Actions can never disagree.
 
 export const SCHEMA_VERSION = 1;
-export const ALLOWED_KEYS = ["id", "en", "ur", "fields", "examples", "note", "cite", "by", "added", "updated", "flag"];
+export const ALLOWED_KEYS = ["id", "en", "ur", "fields", "note", "cite", "by", "added", "updated", "flag"];
 
 // Subject tags. A term may carry several (e.g. "vector": Mathematics + Physics).
 // To open a new subject, add it here — the app and the validator both read this list.
@@ -109,17 +109,6 @@ export function validateEntry(e) {
   if (!fs.length) errs.push("Choose at least one field");
   for (const f of fs) if (!FIELDS.includes(f)) errs.push(`Unknown field "${f}" (allowed: ${FIELDS.join(", ")})`);
   if (e.flag != null && e.flag !== true) errs.push('"flag" must be true or absent');
-  if (e.examples != null) {
-    if (!Array.isArray(e.examples)) errs.push('"examples" must be a list');
-    else {
-      if (e.examples.length > 20) errs.push("At most 20 examples");
-      e.examples.forEach((x, i) => {
-        if (!x || typeof x !== "object" || !LATIN.test(x.en || "") || !ARABIC_SCRIPT.test(x.ur || ""))
-          errs.push(`Example ${i + 1} needs English and Urdu (write it as: English = Urdu)`);
-        else if (x.en.length > 300 || x.ur.length > 300) errs.push(`Example ${i + 1} is too long (max 300 each)`);
-      });
-    }
-  }
   for (const [k, max] of [["note", 3000], ["cite", 600], ["by", 60]]) {
     if (e[k] != null && typeof e[k] !== "string") errs.push(`"${k}" must be text`);
     else if (e[k] && e[k].length > max) errs.push(`"${k}" is too long (max ${max})`);
@@ -188,10 +177,6 @@ export function normaliseEntry(e) {
     const v = String(e[k] || "").replace(/\r\n/g, "\n").trim();
     if (v) out[k] = v;
   }
-  // Usage examples: phrases that show the term in use (not headwords themselves)
-  const ex = (Array.isArray(e.examples) ? e.examples : [])
-    .map(x => ({ en: cleanEn(x?.en), ur: cleanUr(x?.ur) })).filter(x => x.en || x.ur);
-  if (ex.length) out.examples = ex;
   if (e.flag === true) out.flag = true; // flagged by a contributor for review
   return out;
 }

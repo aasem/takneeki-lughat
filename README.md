@@ -9,7 +9,6 @@ A collective volunteer project: an open **English → Urdu dictionary of scienti
 
 - Search in English or Urdu (Nastaliq or Naskh display), filter by field, browse A–Z
 - Light, dark or automatic theme
-- Usage examples under each headword (one per line: English = Urdu)
 - ⚑ Flag any term for changes (contributors); choose "Flagged" in the field filter to see the list
 - Add or correct terms from a phone or a laptop
 - Strong duplicate protection (see below)
@@ -28,7 +27,6 @@ Each term is one line of JSON in `data/<letter>.json`:
 | `en` | ✅ | English term, in natural order ("angular acceleration", not "acceleration, angular") |
 | `ur` | ✅ | Urdu equivalent; alternatives separated by ` / ` |
 | `fields` | ✅ | One or more subject tags: `Physics`, `Mathematics`, `General`. Add more to `FIELDS` in `assets/core.js` |
-| `examples` | – | Phrases showing the term in use: `[{"en": "…", "ur": "…"}]` — not headwords themselves |
 | `note` | – | Explanation, usage, etymology of the Urdu coinage |
 | `id`, `by`, `added`, `updated` | auto | Set by the editor |
 

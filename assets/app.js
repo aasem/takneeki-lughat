@@ -1,7 +1,7 @@
 import {
   FIELDS, cleanEn, cleanUr, enKey, urKey, fieldsOf, makeId, shardFor, validateEntry,
   findConflicts, normaliseEntry, serialiseShard,
-} from "./core.js?v=20261110c";
+} from "./core.js?v=20261110e";
 
 // ---------------------------------------------------------------- config
 const REPO = "aasem/takneeki-lughat";
@@ -120,7 +120,7 @@ async function loadData() {
 
 function rebuild() {
   S.all = Object.values(S.shards).flat();
-  for (const e of S.all) { e._k = enKey(e.en); e._u = urKey(e.ur); e._t = `${e.note || ""} ${(e.examples || []).map(x => x.en).join(" ")}`.toLowerCase(); e._xu = (e.examples || []).map(x => urKey(x.ur)).join("|"); }
+  for (const e of S.all) { e._k = enKey(e.en); e._u = urKey(e.ur); e._t = (e.note || "").toLowerCase(); }
   const used = [...new Set([...FIELDS, ...S.all.flatMap(fieldsOf)])];
   const nFlag = S.all.filter(e => e.flag).length;
   $("#fieldFilter").replaceChildren(el("option", { value: "" }, "All fields"), ...used.map(f => el("option", { value: f, selected: f === S.field }, f)),
@@ -148,7 +148,7 @@ function search() {
     for (const e of list) {
       const i = e._u.indexOf(q);
       if (i >= 0) scored.push([e._u === q ? 0 : i === 0 ? 1 : 2, e]);
-      else if (e._xu.includes(q) || (e.note || "").includes(raw)) scored.push([4, e]);
+      else if ((e.note || "").includes(raw)) scored.push([4, e]);
     }
   } else {
     const q = enKey(raw), ql = raw.toLowerCase();
@@ -177,34 +177,54 @@ const ICON_FLAG = '<svg viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h11l
 const ICON_TRASH = '<svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg>';
 const ICON_EDIT = '<svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m14 6 4 4"/></svg>';
 
+function actionButtons(e, { labels = false } = {}) {
+  const btn = (html, label, fn, cls = "") => {
+    const b = el("button", { type: "button", class: cls, "aria-label": label, title: label, onclick: ev => { ev.stopPropagation(); fn(b); } });
+    b.innerHTML = html + (labels ? `<span>${label}</span>` : ""); return b;
+  };
+  const flag = btn(ICON_FLAG, e.flag ? "Remove flag" : "Flag for changes", b => toggleFlag(e, b), "flag");
+  flag.setAttribute("aria-pressed", String(!!e.flag));
+  return el("div", { class: "term-actions" },
+    flag,
+    btn(ICON_EDIT, "Edit", () => { $("#detail").close(); openEditor(e); }),
+    btn(ICON_TRASH, "Delete", b => deleteTerm(e, b), "del"));
+}
+
+function byline(e) {
+  const who = e.by ? (/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/.test(e.by)
+    ? el("a", { class: "by", href: `https://github.com/${e.by}`, target: "_blank", rel: "noopener", title: `${e.by} on GitHub`, onclick: ev => ev.stopPropagation() }, e.by)
+    : e.by) : null;
+  return el("span", { class: "meta" }, who, who && e.updated ? " · " : null, e.updated ? fmtDate(e.updated) : null);
+}
+
+// Every card has the same four rows, so all cards are the same height:
+// English + tags · Urdu · one-line preview (start of the explanation) · byline + actions.
 function card(e) {
-  const btn = (html, label, fn) => { const b = el("button", { type: "button", "aria-label": label, title: label, onclick: fn }); b.innerHTML = html; return b; };
-  const flagBtn = el("button", {
-    type: "button", class: "flag", "aria-pressed": String(!!e.flag),
-    "aria-label": e.flag ? "Flagged for changes — tap to remove flag" : "Flag for changes",
-    title: e.flag ? "Flagged for changes — click to remove flag" : "Flag for changes",
-    onclick: () => toggleFlag(e, flagBtn),
-  });
-  flagBtn.innerHTML = ICON_FLAG;
-  return el("li", { class: "term" + (e.flag ? " flagged" : ""), id: `t-${e.id}` },
-    el("div", { class: "term-top" },
-      el("h3", { class: "term-en", lang: "en" }, ...highlight(e.en, S.q.trim())),
-      el("p", { class: "term-ur", lang: "ur", dir: "rtl" }, e.ur)),
-    e.examples?.length ? el("ul", { class: "term-ex", "aria-label": "Examples" }, e.examples.map(x =>
-      el("li", {}, el("span", { class: "ex-en", lang: "en" }, x.en), el("span", { class: "ex-ur", lang: "ur", dir: "rtl" }, x.ur)))) : null,
-    e.note ? el("p", { class: "term-note", title: "Tap to expand", onclick: ev => ev.currentTarget.classList.toggle("open") }, e.note) : null,
-    el("div", { class: "term-foot" },
-      el("span", { class: "chips" }, fieldsOf(e).map(f => el("span", { class: "chip" }, f))),
-      el("span", { class: "meta" },
-        e.by ? [/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/.test(e.by)
-          ? el("a", { class: "by", href: `https://github.com/${e.by}`, target: "_blank", rel: "noopener", title: `${e.by} on GitHub` }, e.by)
-          : e.by] : null,
-        e.by && e.updated ? " · " : null,
-        e.updated ? fmtDate(e.updated) : null),
-      el("div", { class: "term-actions" },
-        flagBtn,
-        btn(ICON_EDIT, "Edit", () => openEditor(e)),
-        (() => { const b = btn(ICON_TRASH, "Delete", () => deleteTerm(e, b)); b.classList.add("del"); return b; })())));
+  const preview = e.note ? e.note.split("\n")[0] : "";
+  const more = !!e.note && (e.note.includes("\n") || e.note.length > 60);
+  return el("li", {
+    class: "term" + (e.flag ? " flagged" : ""), id: `t-${e.id}`, tabindex: "0",
+    onclick: () => openDetail(e), onkeydown: ev => { if (ev.key === "Enter" && ev.target === ev.currentTarget) openDetail(e); },
+  },
+    el("div", { class: "term-row" },
+      el("h3", { class: "term-en", lang: "en", title: e.en }, ...highlight(e.en, S.q.trim())),
+      el("span", { class: "chips" }, fieldsOf(e).map(f => el("span", { class: "chip" }, f)))),
+    el("p", { class: "term-ur", lang: "ur", dir: "rtl", title: e.ur }, e.ur),
+    el("p", { class: "term-pv" + (preview ? "" : " empty") }, preview || " ", more ? el("span", { class: "pv-more" }, " · more") : null),
+    el("div", { class: "term-foot" }, byline(e), actionButtons(e)));
+}
+
+function openDetail(e) {
+  const d = $("#detail");
+  $("#detailBody").replaceChildren(...[
+    el("div", { class: "dt-head" },
+      el("h3", { class: "dt-en", lang: "en" }, e.en),
+      el("span", { class: "chips" }, fieldsOf(e).map(f => el("span", { class: "chip" }, f)))),
+    el("p", { class: "dt-ur", lang: "ur", dir: "rtl" }, e.ur),
+    e.note ? el("section", { class: "dt-sec" }, el("h4", {}, "Explanation"), el("p", { class: "dt-note" }, e.note)) : null,
+    el("div", { class: "dt-foot" }, byline(e), actionButtons(e, { labels: true })),
+  ].filter(Boolean));
+  if (!d.open) d.showModal();
 }
 
 function render() {
@@ -265,7 +285,6 @@ function openEditor(entry = null, prefill = "") {
   $("#fieldTags").replaceChildren(...opts.map(f => el("label", { class: "tag" },
     el("input", { type: "checkbox", name: "fields", value: f, checked: pre.includes(f) }), el("span", {}, f))));
   F("note").value = entry?.note || "";
-  F("examples").value = (entry?.examples || []).map(x => `${x.en} = ${x.ur}`).join("\n");
   $("#formError").textContent = "";
   $("#confirmBox").checked = false;
   $("#saveBtn").textContent = S.user ? (entry ? "Save changes" : "Save to dictionary") : "Suggest on GitHub";
@@ -281,19 +300,11 @@ function draftFromForm() {
   const d = normaliseEntry({
     en: F("en").value, ur: F("ur").value,
     fields: [...form.querySelectorAll('input[name="fields"]:checked')].map(i => i.value),
-    note: F("note").value, examples: parseExamples(F("examples").value),
+    note: F("note").value,
     by: o ? o.by || S.user?.login : S.user?.login, added: o?.added || now, updated: now,
   });
   d.id = makeId(d.en, d.fields);
   return d;
-}
-
-// "English = Urdu", one example per line ("—" or a tab also work as the separator)
-function parseExamples(text) {
-  return String(text || "").split(/\n/).map(l => l.trim()).filter(Boolean).map(l => {
-    const m = l.split(/\s*(?:=|\t|\s—\s|\s–\s)\s*/);
-    return { en: (m[0] || "").trim(), ur: m.slice(1).join(" ").trim() };
-  });
 }
 
 let checkTimer;
@@ -305,8 +316,7 @@ function runChecks() {
     const errs = validateEntry(d).filter(m => (F("en").value || F("ur").value) || !/required/.test(m));
     const c = d.en ? findConflicts(d, S.all, { ignoreId: S.editing?.id }) : { block: [], warn: [], info: [] };
     // Unchanged edit? nothing to save.
-    const same = S.editing && ["en", "ur", "note"].every(k => (S.editing[k] || "") === (d[k] || "")) && fieldsOf(S.editing).join() === d.fields.join()
-      && JSON.stringify(S.editing.examples || []) === JSON.stringify(d.examples || []);
+    const same = S.editing && ["en", "ur", "note"].every(k => (S.editing[k] || "") === (d[k] || "")) && fieldsOf(S.editing).join() === d.fields.join();
     const sec = (cls, icon, title, items) => items.length ? el("div", { class: `check ${cls}` },
       el("h4", {}, icon, " ", title),
       el("ul", {}, items.slice(0, 6).map(({ entry, why }) => el("li", {},
@@ -394,6 +404,7 @@ async function deleteTerm(e, button) {
       return { [p]: list };
     }, `Delete: ${e.en} → ${e.ur}\n\nvia web editor`);
     S.shards[p] = changed[p]; rebuild();
+    $("#detail").close();
     toast(`“${e.en}” deleted`);
   } catch (err) {
     button.disabled = false; button.classList.remove("armed"); button.title = "Delete";
@@ -416,6 +427,7 @@ async function toggleFlag(e, button) {
       return { [p]: list };
     }, `${on ? "Flag" : "Unflag"}: ${e.en}\n\nvia web editor`);
     S.shards[p] = changed[p]; rebuild();
+    if ($("#detail").open) { const x = S.all.find(y => y.id === e.id); x ? openDetail(x) : $("#detail").close(); }
     toast(on ? "Flagged for changes ⚑" : "Flag removed");
   } catch (err) {
     button.setAttribute("aria-pressed", String(!on)); button.closest(".term")?.classList.toggle("flagged", !on);
@@ -508,6 +520,7 @@ const applyScript = () => {
 };
 $("#scriptToggle").addEventListener("click", () => { store.set("tl.script", store.get("tl.script") === "naskh" ? "nastaliq" : "naskh", true); applyScript(); });
 window.addEventListener("hashchange", jumpToHash);
+$("#detail").addEventListener("click", ev => { if (ev.target === ev.currentTarget) ev.currentTarget.close(); }); // tap outside closes
 
 // ---------------------------------------------------------------- boot
 (async function boot() {

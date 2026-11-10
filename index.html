@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=20261110c">
+<link rel="stylesheet" href="assets/style.css?v=20261110e">
 </head>
 <body>
 <header class="masthead">
@@ -111,10 +111,6 @@
         <input type="checkbox" id="confirmBox"> I have looked at the similar terms above and this is genuinely a different entry.
       </label>
       <label class="fld">
-        <span>Examples <i>optional — phrases showing the term in use, one per line: English = Urdu</i></span>
-        <textarea name="examples" rows="2" maxlength="4000" placeholder="energy above the ground state = زمینی حال سے زائد توانائی"></textarea>
-      </label>
-      <label class="fld">
         <span>Explanation &amp; etymology <i>optional</i></span>
         <textarea name="note" rows="3" maxlength="3000" placeholder="Meaning, usage, and how the Urdu word is formed — e.g. اسراع from Arabic سرعت ‘speed’ (verbal noun, form IV)."></textarea>
       </label>
@@ -155,8 +151,13 @@
   </form>
 </dialog>
 
+<dialog id="detail" class="sheet narrow" aria-label="Term details">
+  <header class="sheet-head"><span></span><button type="button" class="icon" data-close aria-label="Close">✕</button></header>
+  <div id="detailBody"></div>
+</dialog>
+
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<script type="module" src="assets/app.js?v=20261110c"></script>
+<script type="module" src="assets/app.js?v=20261110e"></script>
 </body>
 </html>
