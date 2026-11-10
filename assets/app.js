@@ -1,7 +1,7 @@
 import {
   FIELDS, cleanEn, cleanUr, enKey, urKey, fieldsOf, makeId, shardFor, validateEntry,
   findConflicts, normaliseEntry, serialiseShard,
-} from "./core.js?v=20261110h";
+} from "./core.js?v=20261110i";
 
 // ---------------------------------------------------------------- config
 const REPO = "aasem/takneeki-lughat";
