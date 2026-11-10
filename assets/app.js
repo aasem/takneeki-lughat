@@ -124,7 +124,7 @@ function rebuild() {
   const used = [...new Set([...FIELDS, ...S.all.flatMap(fieldsOf)])];
   $("#fieldFilter").replaceChildren(el("option", { value: "" }, "All fields"), ...used.map(f => el("option", { value: f, selected: f === S.field }, f)));
   $("#statTerms").textContent = S.all.length.toLocaleString();
-  $("#statFields").textContent = new Set(S.all.flatMap(fieldsOf)).size;
+  $("#statFields").textContent = new Set(S.all.flatMap(fieldsOf).filter(f => f !== "Unclassified")).size;
   $("#statPeople").textContent = new Set(S.all.map(e => e.by).filter(Boolean)).size;
   renderAlpha();
   render();

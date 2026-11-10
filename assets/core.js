@@ -7,7 +7,8 @@ export const ALLOWED_KEYS = ["id", "en", "ur", "fields", "note", "cite", "by", "
 
 // Subject tags. A term may carry several (e.g. "vector": Mathematics + Physics).
 // To open a new subject, add it here — the app and the validator both read this list.
-export const FIELDS = ["Physics", "Mathematics"];
+// "Unclassified" marks imported terms whose subject hasn't been decided yet — a work queue.
+export const FIELDS = ["Physics", "Mathematics", "Unclassified"];
 
 const DASHES = /[‐-―−]/g;
 const ARABIC_SCRIPT = /[؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿]/;
@@ -27,16 +28,26 @@ export function cleanUr(s) {
     .replace(/[ \s]+/g, " ").trim();
 }
 
+const alnum = t => t.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "");
+
 /**
- * Canonical comparison key for an English term.
- *  - case, accents, spaces, hyphens and punctuation are ignored ("Co-efficient" == "coefficient")
- *  - glossary inversion is undone ("Acceleration, centripetal" == "centripetal acceleration")
+ * Canonical comparison key for an English term (exact duplicates are BLOCKED on this):
+ * case, accents, spaces, hyphens and punctuation are ignored ("Co-efficient" == "coefficient").
+ * Bracketed qualifiers still count, so "column (matrix)" and "column" are different senses.
  */
 export function enKey(s) {
+  return alnum(cleanEn(s).toLowerCase());
+}
+
+/**
+ * Looser key (matches only WARN): drops bracketed qualifiers and undoes glossary
+ * inversion ("Acceleration, centripetal" ~ "centripetal acceleration").
+ */
+export function enLooseKey(s) {
   let t = cleanEn(s).toLowerCase().replace(/\s*\([^)]*\)\s*/g, " ").trim();
   const inv = t.match(/^([^,]+),\s*([^,]+)$/);
   if (inv) t = `${inv[2]} ${inv[1]}`;
-  return t.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "");
+  return alnum(t);
 }
 
 /** Bag-of-words key (order-free, crude plural folding) for near-duplicate warnings. */
@@ -136,7 +147,7 @@ function onlyEndingDiffers(a, b) {
  */
 export function findConflicts(cand, entries, { ignoreId = null } = {}) {
   const out = { block: [], warn: [], info: [] };
-  const k = enKey(cand.en), wk = enWordKey(cand.en), fs = fieldsOf(cand), uk = urKey(cand.ur);
+  const k = enKey(cand.en), lk = enLooseKey(cand.en), wk = enWordKey(cand.en), fs = fieldsOf(cand), uk = urKey(cand.ur);
   if (!k) return out;
   const tol = k.length >= 10 ? 2 : k.length >= 5 ? 1 : 0;
   const id = cand.id || makeId(cand.en, fs);
@@ -147,6 +158,7 @@ export function findConflicts(cand, entries, { ignoreId = null } = {}) {
     if (ek === k && (shared.length || !fs.length)) { out.block.push({ entry: e, why: shared.length ? `Already in the dictionary under ${shared.join(" & ")}` : "Same English term already exists" }); continue; }
     if (e.id === id) { out.block.push({ entry: e, why: "An entry with this ID already exists" }); continue; }
     if (ek === k) { out.warn.push({ entry: e, why: `Exists under ${efs.join(" & ")} — if the Urdu is the same, edit that entry and add your field instead` }); continue; }
+    if (lk && enLooseKey(e.en) === lk) { out.warn.push({ entry: e, why: "Same term with a different qualifier or word order" }); continue; }
     if (wk && enWordKey(e.en) === wk) { out.warn.push({ entry: e, why: "Same words in a different order or number" }); continue; }
     if (tol && !onlyEndingDiffers(k, ek) && lev(k, ek, tol) <= tol) { out.warn.push({ entry: e, why: "Very similar spelling — possible typo" }); continue; }
     if (uk && urKey(e.ur) === uk) out.info.push({ entry: e, why: "Same Urdu equivalent used for another term" });
