@@ -3,7 +3,7 @@
 
 A collective volunteer project: an open **English → Urdu dictionary of scientific and technical terms**, made to support translating science and engineering textbooks into Urdu. (`takneeki-lughat` is the repository name.)
 
-© 2026 Asim Bakhshi · National University of Sciences and Technology (NUST)
+© 2026 Asim Bakhshi and Khalid Khan
 
 **Live:** https://aasem.github.io/takneeki-lughat/
 
