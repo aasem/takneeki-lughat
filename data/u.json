@@ -1,7 +1,10 @@
 [
+{"id":"ubiquitous.physics","en":"ubiquitous","ur":"جگہ جگہ پائے جانا","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"ultra-relativistic.physics","en":"Ultra-relativistic","ur":"بالائے اضافیتی","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"ultraviolet.mathematics","en":"ultraviolet","ur":"بالائے بصری شعاع","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"unbiased.mathematics","en":"unbiased","ur":"غیر جانب دارانہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"uncertainty-principle.mathematics","en":"uncertainty principle","ur":"عدم یقینیت کا اصول","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"uncertainty-principle-uncertainty.physics","en":"uncertainty principle, [uncertainty]","ur":"عدم یقینیت کا اصول، [عدم یقینیت]","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"uncovered-charges.mathematics","en":"uncovered charges","ur":"بے پردہ، نمودار","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"undamped.mathematics","en":"undamped","ur":"غیر تقصیری، بلا تقصیر، غیر قصری / بلا تقصیر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"undamped-natural-frequency.mathematics","en":"undamped natural frequency","ur":"بلا تقصیر قدرتی تعدد","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
@@ -24,6 +27,7 @@
 {"id":"unit-matrix.mathematics","en":"unit matrix","ur":"اکائی قالب","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"unit-step-function-heaviside-step-function.mathematics","en":"unit step function, Heaviside step function","ur":"اکائی سیڑھی تفاعل، ہیوی سائیڈ اکائی سیڑھی تفاعل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"unit-step-function-time-shifted.mathematics","en":"unit step function: time shifted","ur":"وقتی منقولہ اکائی سیڑھی تفاعل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"universal-gravitational-constant.physics","en":"universal gravitational constant","ur":"عالمگیر تجاذبی مستقل","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"universal-universal-constant.mathematics","en":"universal (universal constant)","ur":"عالمگیر (عالمگیر مستقل)","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"unstable.mathematics","en":"unstable","ur":"غیر قابو، نا پائیدار","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"upper-lower.mathematics","en":"upper, lower","ur":"بالائی، زیریں","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
@@ -32,5 +36,6 @@
 {"id":"uranium.mathematics","en":"uranium","ur":"یورینیم","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"uranus-planet.mathematics","en":"Uranus planet","ur":"یورانس","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"usb-universal-serial-port.mathematics","en":"usb: universal serial port","ur":"یو-ایس-بی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"usual-as-usual.mathematics","en":"usual: as usual","ur":"ہمیشہ کی طرح، معمول کے مطابق، معمولاً، حسب معمول","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"}
+{"id":"usual-as-usual.mathematics","en":"usual: as usual","ur":"ہمیشہ کی طرح، معمول کے مطابق، معمولاً، حسب معمول","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"usual-as-usual-unusual.physics","en":"usual: as usual, [unusual]","ur":"ہمیشہ کی طرح، معمول کے مطابق، معمولاً، حسب معمول، [غیر معمولی]","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"}
 ]

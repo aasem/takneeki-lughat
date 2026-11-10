@@ -4,5 +4,7 @@
 {"id":"y21-short-circuit-transadmittance.mathematics","en":"y21: short-circuit transadmittance","ur":"قصر دور فراوانی نما","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"y22-short-circuit-output-admittance.mathematics","en":"y22: short-circuit output admittance","ur":"قصر دور خارجی فراوانی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"young-s-modulus-of-elasticity.mathematics","en":"Young's modulus of elasticity","ur":"ینگ مقیاس لچک","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"y-parameters-y11-y12-y21-y22.mathematics","en":"Y parameters: y11, y12, y21, y22","ur":"Y مقدار","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"}
+{"id":"y-parameters-y11-y12-y21-y22.mathematics","en":"Y parameters: y11, y12, y21, y22","ur":"Y مقدار","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"yukawa-potential.physics","en":"Yukawa potential","ur":"یوکاوا مخفیہ","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"yukawa-scattering.physics","en":"Yukawa scattering","ur":"یوکاوا بکھراو","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"}
 ]

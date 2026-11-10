@@ -76,3 +76,7 @@ The first 110 terms are from pages 7–11 of *Glossary of Technical Terms: Physi
 ### Project word list (November 2026)
 
 About 2,900 terms were imported from the team spreadsheet `english_to_urdu_words.ods` (sheet *words*), tagged **Mathematics**. These entries carry no citation. Repeated rows were merged: differing Urdu renderings are kept side by side (`… / …`), and the spreadsheet's "suggestions" column is kept in the explanation as *Suggestions*. Colour codings were not imported. Twelve rows had no Urdu (or no English) and were not imported: 350, 362, 1090, 1709, 1757, 1965, 1967, 2246, 2768, 2832, 2912, 2913.
+
+### Quantum mechanics word list (November 2026)
+
+788 further terms were imported from `english_to_urdu_wordsQuantumMechanics_OLD.ods` (sheet *words*), tagged **Physics**. Terms already in the dictionary were not added again; where this older sheet gave a different Urdu rendering, the existing Urdu was kept.

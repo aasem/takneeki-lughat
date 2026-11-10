@@ -1,4 +1,5 @@
 [
+{"id":"kaon.physics","en":"kaon","ur":"کاون","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"kappa-greek-alphabet.mathematics","en":"kappa (greek alphabet)","ur":"کاہپا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"karl-weierstrass.mathematics","en":"Karl Weierstrass","ur":"کارل وائشسٹراس","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"kelvin.mathematics","en":"Kelvin","ur":"کیلون","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
@@ -11,5 +12,8 @@
 {"id":"kink-quantum-mech.mathematics","en":"kink (quantum mech)","ur":"بل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"kirchoff-gustav-robert-kirchoff.mathematics","en":"Kirchoff: Gustav Robert Kirchoff","ur":"گستاف روبرٹ کرخوف","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"kirchoff-s-current-law-voltage-law.mathematics","en":"Kirchoff's current law, voltage law","ur":"کرخوف قانونِ رو، کرخوف قانونِ دباو","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"kronecker-delta-leopold-kronecker.mathematics","en":"Kronecker delta, Leopold Kronecker","ur":"لیوپولڈ کرونیکر، کرونیکر ضرب، کرونیکر ڈیلٹا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"}
+{"id":"kramers-relation.physics","en":"Kramers relation","ur":"رشتہ کرامرس","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"kronecker-delta-leopold-kronecker.mathematics","en":"Kronecker delta, Leopold Kronecker","ur":"لیوپولڈ کرونیکر، کرونیکر ضرب، کرونیکر ڈیلٹا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"kronig-penny-model.physics","en":"Kronig-Penny model","ur":"کرانگ و پینی نمونہ","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"krypton.physics","en":"krypton","ur":"کرپٹان","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"}
 ]

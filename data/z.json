@@ -1,4 +1,14 @@
 [
+{"id":"zeeman-effect.physics","en":"Zeeman effect","ur":"زیمان اثر","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"zeeman-splitting.physics","en":"Zeeman splitting","ur":"زیمان بٹوارا","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"zeeman-strong-field-zeeman-splititng.physics","en":"Zeeman: strong field zeeman splititng","ur":"طاقتور میدانی زیمان بٹوارا","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"zeeman-weak-field-zeeman-splitting.physics","en":"Zeeman: weak field zeeman splitting","ur":"کمزور میدانی زیمان بٹوارا","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"zeno-effect.physics","en":"Zeno effect","ur":"زینو اثر","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"zeno-paradox.physics","en":"Zeno paradox","ur":"زینو تضاد","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"zero-crossing.physics","en":"zero crossing","ur":"عبور صفر، صفر مقام انقطاع","fields":["Physics"],"note":"Suggestions: صفر سے گزراؤ،، عبورِ صفر","by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"zero-non-zero.mathematics","en":"zero: non zero","ur":"غیر صفر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"zig-zag.mathematics","en":"Zig-zag","ur":"بھل کھاتا،کنگی نما","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"}
+{"id":"zero-point.physics","en":"zero point","ur":"نقطہ آغاز، نقطہ صفر، صفر نقطی","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"zig-zag.mathematics","en":"Zig-zag","ur":"بھل کھاتا،کنگی نما","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"zinc.physics","en":"zinc","ur":"جست","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"zone.physics","en":"zone","ur":"علاقہ","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"}
 ]
