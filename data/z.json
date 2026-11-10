@@ -1,14 +1,17 @@
 [
+{"id":"z.mathematics","en":"z","ur":"زیڈ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:59:16.081Z","updated":"2026-11-10T09:59:16.081Z"},
+{"id":"z-bar.mathematics-physics","en":"z bar","ur":"زیڈ چھت","fields":["Physics","Mathematics"],"note":"The complex conjugate of z, written with an overline (z̄).","by":"aasem","added":"2026-11-10T09:49:08.266Z","updated":"2026-11-10T09:49:08.266Z"},
 {"id":"zeeman-effect.physics","en":"Zeeman effect","ur":"زیمان اثر","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
-{"id":"zeeman-splitting.physics","en":"Zeeman splitting","ur":"زیمان بٹوارا","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
-{"id":"zeeman-strong-field-zeeman-splititng.physics","en":"Zeeman: strong field zeeman splititng","ur":"طاقتور میدانی زیمان بٹوارا","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
-{"id":"zeeman-weak-field-zeeman-splitting.physics","en":"Zeeman: weak field zeeman splitting","ur":"کمزور میدانی زیمان بٹوارا","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"zeeman-splitting.physics","en":"Zeeman splitting","ur":"زیمان بٹوارا","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T09:57:56.870Z"},
 {"id":"zeno-effect.physics","en":"Zeno effect","ur":"زینو اثر","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"zeno-paradox.physics","en":"Zeno paradox","ur":"زینو تضاد","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"zepto.mathematics","en":"zepto-","ur":"زپٹو","fields":["Mathematics"],"note":"SI prefix, ×10⁻²¹","by":"aasem","added":"2026-11-10T09:55:39.922Z","updated":"2026-11-10T09:55:39.922Z"},
 {"id":"zero-crossing.physics","en":"zero crossing","ur":"عبور صفر، صفر مقام انقطاع","fields":["Physics"],"note":"Suggestions: صفر سے گزراؤ،، عبورِ صفر","by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
-{"id":"zero-non-zero.mathematics","en":"zero: non zero","ur":"غیر صفر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"zero-of-a-function.mathematics-physics","en":"zero (of a function)","ur":"صفر","fields":["Physics","Mathematics"],"note":"Plural: صفرے / صفروں","by":"aasem","added":"2026-11-10T09:55:39.922Z","updated":"2026-11-10T09:55:39.922Z"},
 {"id":"zero-point.physics","en":"zero point","ur":"نقطہ آغاز، نقطہ صفر، صفر نقطی","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"zetta.mathematics","en":"zetta-","ur":"زٹا","fields":["Mathematics"],"note":"SI prefix, ×10²¹","by":"aasem","added":"2026-11-10T09:55:39.922Z","updated":"2026-11-10T09:55:39.922Z"},
 {"id":"zig-zag.mathematics","en":"Zig-zag","ur":"بھل کھاتا،کنگی نما","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"zinc.physics","en":"zinc","ur":"جست","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
-{"id":"zone.physics","en":"zone","ur":"علاقہ","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"}
+{"id":"zone.physics","en":"zone","ur":"علاقہ","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
+{"id":"zurek.physics","en":"Zurek","ur":"زورک","fields":["Physics"],"note":"Physicist (no-cloning theorem).","by":"aasem","added":"2026-11-10T09:59:16.081Z","updated":"2026-11-10T09:59:16.081Z","flag":true}
 ]

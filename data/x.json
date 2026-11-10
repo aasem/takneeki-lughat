@@ -1,5 +1,6 @@
 [
-{"id":"xor-gate.mathematics","en":"xor gate","ur":"بِلا شرکت آرگیٹ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"x-ray.mathematics","en":"X ray","ur":"ایکس رے","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"x-y-z.mathematics","en":"x, y, z","ur":"ایکس، وائے، زیڈ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"}
+{"id":"x.mathematics","en":"x","ur":"ایکس","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:59:16.081Z","updated":"2026-11-10T09:59:16.081Z"},
+{"id":"x-intercept.mathematics","en":"x-intercept","ur":"قاطع ایکس / قطع ایکس","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:52:36.987Z","updated":"2026-11-10T09:52:36.987Z"},
+{"id":"xor-gate.mathematics","en":"XOR gate","ur":"بِلا شرکت آرگیٹ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T10:02:51.475Z"},
+{"id":"x-ray.mathematics","en":"X ray","ur":"ایکس رے","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"}
 ]

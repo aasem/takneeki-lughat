@@ -1,7 +1,7 @@
 import {
   FIELDS, cleanEn, cleanUr, enKey, urKey, fieldsOf, makeId, shardFor, validateEntry,
   findConflicts, normaliseEntry, serialiseShard,
-} from "./core.js?v=20261110f";
+} from "./core.js?v=20261110h";
 
 // ---------------------------------------------------------------- config
 const REPO = "aasem/takneeki-lughat";
@@ -123,8 +123,9 @@ function rebuild() {
   for (const e of S.all) { e._k = enKey(e.en); e._u = urKey(e.ur); e._t = (e.note || "").toLowerCase(); }
   const used = [...new Set([...FIELDS, ...S.all.flatMap(fieldsOf)])];
   const nFlag = S.all.filter(e => e.flag).length;
-  $("#fieldFilter").replaceChildren(el("option", { value: "" }, "All fields"), ...used.map(f => el("option", { value: f, selected: f === S.field }, f)),
-    el("option", { value: "__flagged", selected: S.field === "__flagged" }, `⚑ Flagged (${nFlag})`));
+  $("#flagCount").textContent = nFlag.toLocaleString();
+  $("#flagFilter").setAttribute("aria-pressed", String(!!S.flagged));
+  $("#fieldFilter").replaceChildren(el("option", { value: "" }, "All fields"), ...used.map(f => el("option", { value: f, selected: f === S.field }, f)));
   $("#statTerms").textContent = S.all.length.toLocaleString();
   $("#statFields").textContent = new Set(S.all.flatMap(fieldsOf)).size;
   $("#statPeople").textContent = new Set(S.all.map(e => e.by).filter(Boolean)).size;
@@ -136,8 +137,8 @@ function rebuild() {
 function search() {
   const raw = S.q.trim();
   let list = S.all;
-  if (S.field === "__flagged") list = list.filter(e => e.flag);
-  else if (S.field) list = list.filter(e => fieldsOf(e).includes(S.field));
+  if (S.flagged) list = list.filter(e => e.flag);
+  if (S.field) list = list.filter(e => fieldsOf(e).includes(S.field));
   if (!raw) {
     if (S.letter) return list.filter(e => (S.letter === "#" ? !/^[a-z]/.test(e._k) : e._k.startsWith(S.letter))).sort((a, b) => a._k.localeCompare(b._k));
     return [...list].sort((a, b) => (b.updated || "").localeCompare(a.updated || "") || a._k.localeCompare(b._k));
@@ -230,7 +231,7 @@ function openDetail(e) {
 function render() {
   const res = search();
   const n = res.length, hw = `${n.toLocaleString()} headword${n === 1 ? "" : "s"}`;
-  const scope = S.field === "__flagged" ? " · flagged for changes" : S.field ? ` · ${S.field}` : "";
+  const scope = (S.field ? ` · ${S.field}` : "") + (S.flagged ? " · flagged for changes" : "");
   const q = S.q.trim();
   $("#resultTitle").replaceChildren(...(
     q ? [el("span", { class: "rt-main" }, `“${q}”`), el("span", { class: "rt-count" }, `${hw} found${scope}`)]
@@ -494,6 +495,10 @@ $("#q").addEventListener("input", e => {
   qTimer = setTimeout(() => { S.q = e.target.value; S.letter = ""; S.shown = PAGE; renderAlpha(); render(); }, 90);
 });
 $("#fieldFilter").addEventListener("change", e => { S.field = e.target.value; S.shown = PAGE; render(); });
+$("#flagFilter").addEventListener("click", () => {
+  S.flagged = !S.flagged; S.shown = PAGE;
+  $("#flagFilter").setAttribute("aria-pressed", String(S.flagged)); render();
+});
 $("#moreBtn").addEventListener("click", () => { S.shown += PAGE * 2; render(); });
 $("#addBtn").addEventListener("click", () => openEditor(null, ARABIC.test(S.q) ? "" : S.q.trim()));
 // Theme: auto (follow device) → light → dark

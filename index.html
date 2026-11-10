@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=20261110f">
+<link rel="stylesheet" href="assets/style.css?v=20261110h">
 </head>
 <body>
 <header class="masthead">
@@ -49,6 +49,7 @@
       <kbd>/</kbd>
     </label>
     <select id="fieldFilter" aria-label="Filter by field"><option value="">All fields</option></select>
+    <button type="button" class="flagbtn" id="flagFilter" aria-pressed="false" title="Show only terms flagged for changes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg><span>Flagged</span><b id="flagCount">0</b></button>
   </section>
 
   <nav class="alpha" id="alpha" aria-label="Browse by letter"></nav>
@@ -158,6 +159,6 @@
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<script type="module" src="assets/app.js?v=20261110f"></script>
+<script type="module" src="assets/app.js?v=20261110h"></script>
 </body>
 </html>
