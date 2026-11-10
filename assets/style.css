@@ -139,6 +139,10 @@ select, .fld input, .fld textarea {
 .term-en::first-letter { text-transform: uppercase; }
 .chip { flex: none; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: var(--teal); background: color-mix(in srgb, var(--teal) 10%, transparent); border-radius: 999px; padding: 3px 9px; margin-top: 4px; }
 .term-ur { font-family: var(--ur-font); line-height: var(--ur-lh); font-size: 25px; direction: rtl; text-align: right; color: var(--ink); margin: 2px 0; overflow-wrap: anywhere; }
+.term-ex { list-style: none; margin: 0 0 4px; padding: 6px 0 2px 12px; border-left: 2px solid color-mix(in srgb, var(--gold) 55%, transparent); display: flex; flex-direction: column; gap: 2px; }
+.term-ex li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 12px; }
+.term-ex .ex-en { font-family: Fraunces, serif; font-style: italic; font-size: 14.5px; color: var(--ink-soft); }
+.term-ex .ex-ur { font-family: var(--ur-font); line-height: var(--ur-lh); font-size: 17px; margin-left: auto; text-align: right; }
 .term-note { font-size: 14.5px; color: var(--ink-soft); margin: 2px 0 4px; white-space: pre-line; }
 .term-cite { font-size: 12.5px; color: var(--muted); display: flex; gap: 6px; align-items: flex-start; }
 .term-cite svg { width: 14px; height: 14px; flex: none; margin-top: 3px; }

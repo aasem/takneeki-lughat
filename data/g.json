@@ -64,6 +64,7 @@
 {"id":"grid-mesh.physics","en":"grid, mesh","ur":"جال، خانے","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"grid-mesh-fine-mesh.mathematics","en":"grid, mesh, {fine mesh}","ur":"جال، خانے، {باریک خانوں کا جال}","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"gross-net.mathematics","en":"gross, [net]","ur":"اجمالی، [صافی]","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"ground-state.physics","en":"ground state","ur":"زمینی حال","fields":["Physics"],"by":"aasem","added":"2026-11-10T09:14:50.634Z","updated":"2026-11-10T09:14:50.634Z","examples":[{"en":"energy above the ground state","ur":"زمینی حال سے زائد توانائی"}]},
 {"id":"group-delay-dispersion.mathematics","en":"group delay (dispersion)","ur":"گروہی تاخیر","fields":["Mathematics"],"note":"Suggestions: مجموعی تاخیر","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"group-grouping.mathematics","en":"group, grouping","ur":"گروہ، گروہ بندی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"group-theory.physics","en":"group theory","ur":"گروہی نظریہ","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},

@@ -120,7 +120,7 @@ async function loadData() {
 
 function rebuild() {
   S.all = Object.values(S.shards).flat();
-  for (const e of S.all) { e._k = enKey(e.en); e._u = urKey(e.ur); e._t = `${e.note || ""} ${e.cite || ""}`.toLowerCase(); }
+  for (const e of S.all) { e._k = enKey(e.en); e._u = urKey(e.ur); e._t = `${e.note || ""} ${e.cite || ""} ${(e.examples || []).map(x => x.en).join(" ")}`.toLowerCase(); e._xu = (e.examples || []).map(x => urKey(x.ur)).join("|"); }
   const used = [...new Set([...FIELDS, ...S.all.flatMap(fieldsOf)])];
   const nFlag = S.all.filter(e => e.flag).length;
   $("#fieldFilter").replaceChildren(el("option", { value: "" }, "All fields"), ...used.map(f => el("option", { value: f, selected: f === S.field }, f)),
@@ -148,7 +148,7 @@ function search() {
     for (const e of list) {
       const i = e._u.indexOf(q);
       if (i >= 0) scored.push([e._u === q ? 0 : i === 0 ? 1 : 2, e]);
-      else if ((e.note || "").includes(raw)) scored.push([4, e]);
+      else if (e._xu.includes(q) || (e.note || "").includes(raw)) scored.push([4, e]);
     }
   } else {
     const q = enKey(raw), ql = raw.toLowerCase();
@@ -191,6 +191,8 @@ function card(e) {
       el("h3", { class: "term-en", lang: "en" }, ...highlight(e.en, S.q.trim())),
       el("div", { class: "chips" }, fieldsOf(e).map(f => el("span", { class: "chip" }, f)))),
     el("p", { class: "term-ur", lang: "ur", dir: "rtl" }, e.ur),
+    e.examples?.length ? el("ul", { class: "term-ex", "aria-label": "Examples" }, e.examples.map(x =>
+      el("li", {}, el("span", { class: "ex-en", lang: "en" }, x.en), el("span", { class: "ex-ur", lang: "ur", dir: "rtl" }, x.ur)))) : null,
     e.note ? el("p", { class: "term-note" }, e.note) : null,
     e.cite ? (() => { const p = el("p", { class: "term-cite" }); p.innerHTML = ICON_BOOK; p.append(e.cite); return p; })() : null,
     el("div", { class: "term-foot" },
@@ -263,6 +265,7 @@ function openEditor(entry = null, prefill = "") {
   $("#fieldTags").replaceChildren(...opts.map(f => el("label", { class: "tag" },
     el("input", { type: "checkbox", name: "fields", value: f, checked: pre.includes(f) }), el("span", {}, f))));
   F("note").value = entry?.note || "";
+  F("examples").value = (entry?.examples || []).map(x => `${x.en} = ${x.ur}`).join("\n");
   F("cite").value = entry?.cite || store.get("tl.lastCite") || "";
   if (entry) F("cite").value = entry.cite || "";
   $("#formError").textContent = "";
@@ -280,11 +283,19 @@ function draftFromForm() {
   const d = normaliseEntry({
     en: F("en").value, ur: F("ur").value,
     fields: [...form.querySelectorAll('input[name="fields"]:checked')].map(i => i.value),
-    note: F("note").value, cite: F("cite").value,
+    note: F("note").value, cite: F("cite").value, examples: parseExamples(F("examples").value),
     by: o ? o.by || S.user?.login : S.user?.login, added: o?.added || now, updated: now,
   });
   d.id = makeId(d.en, d.fields);
   return d;
+}
+
+// "English = Urdu", one example per line ("—" or a tab also work as the separator)
+function parseExamples(text) {
+  return String(text || "").split(/\n/).map(l => l.trim()).filter(Boolean).map(l => {
+    const m = l.split(/\s*(?:=|\t|\s—\s|\s–\s)\s*/);
+    return { en: (m[0] || "").trim(), ur: m.slice(1).join(" ").trim() };
+  });
 }
 
 let checkTimer;
@@ -296,7 +307,8 @@ function runChecks() {
     const errs = validateEntry(d).filter(m => (F("en").value || F("ur").value) || !/required/.test(m));
     const c = d.en ? findConflicts(d, S.all, { ignoreId: S.editing?.id }) : { block: [], warn: [], info: [] };
     // Unchanged edit? nothing to save.
-    const same = S.editing && ["en", "ur", "note", "cite"].every(k => (S.editing[k] || "") === (d[k] || "")) && fieldsOf(S.editing).join() === d.fields.join();
+    const same = S.editing && ["en", "ur", "note", "cite"].every(k => (S.editing[k] || "") === (d[k] || "")) && fieldsOf(S.editing).join() === d.fields.join()
+      && JSON.stringify(S.editing.examples || []) === JSON.stringify(d.examples || []);
     const sec = (cls, icon, title, items) => items.length ? el("div", { class: `check ${cls}` },
       el("h4", {}, icon, " ", title),
       el("ul", {}, items.slice(0, 6).map(({ entry, why }) => el("li", {},
