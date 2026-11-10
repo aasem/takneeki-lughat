@@ -148,6 +148,11 @@ select, .fld input, .fld textarea {
 .term-actions { display: flex; gap: 2px; }
 .term-actions button { border: 0; background: none; color: var(--ink-soft); padding: 6px 8px; border-radius: 8px; font-size: 13px; display: inline-flex; gap: 5px; align-items: center; }
 .term-actions button:hover { background: var(--paper-2); color: var(--ink); }
+.term-actions .flag { color: var(--muted); }
+.term-actions .flag[aria-pressed="true"] { color: var(--danger); }
+.term-actions .flag[aria-pressed="true"] svg { fill: currentColor; }
+.term-actions .flag:disabled { opacity: .5; cursor: progress; }
+.term.flagged { border-color: color-mix(in srgb, var(--danger) 45%, var(--line)); box-shadow: inset 3px 0 0 var(--danger), var(--shadow); }
 .term-actions svg { width: 15px; height: 15px; }
 mark { background: color-mix(in srgb, var(--gold-soft) 45%, transparent); color: inherit; border-radius: 3px; padding: 0 1px; }
 

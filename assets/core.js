@@ -3,7 +3,7 @@
 // GitHub Actions can never disagree.
 
 export const SCHEMA_VERSION = 1;
-export const ALLOWED_KEYS = ["id", "en", "ur", "fields", "note", "cite", "by", "added", "updated"];
+export const ALLOWED_KEYS = ["id", "en", "ur", "fields", "note", "cite", "by", "added", "updated", "flag"];
 
 // Subject tags. A term may carry several (e.g. "vector": Mathematics + Physics).
 // To open a new subject, add it here — the app and the validator both read this list.
@@ -109,6 +109,7 @@ export function validateEntry(e) {
   const fs = fieldsOf(e);
   if (!fs.length) errs.push("Choose at least one field");
   for (const f of fs) if (!FIELDS.includes(f)) errs.push(`Unknown field "${f}" (allowed: ${FIELDS.join(", ")})`);
+  if (e.flag != null && e.flag !== true) errs.push('"flag" must be true or absent');
   for (const [k, max] of [["note", 3000], ["cite", 600], ["by", 60]]) {
     if (e[k] != null && typeof e[k] !== "string") errs.push(`"${k}" must be text`);
     else if (e[k] && e[k].length > max) errs.push(`"${k}" is too long (max ${max})`);
@@ -178,6 +179,7 @@ export function normaliseEntry(e) {
     const v = String(e[k] || "").replace(/\r\n/g, "\n").trim();
     if (v) out[k] = v;
   }
+  if (e.flag === true) out.flag = true; // flagged by a contributor for review
   return out;
 }
 

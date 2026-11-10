@@ -122,7 +122,9 @@ function rebuild() {
   S.all = Object.values(S.shards).flat();
   for (const e of S.all) { e._k = enKey(e.en); e._u = urKey(e.ur); e._t = `${e.note || ""} ${e.cite || ""}`.toLowerCase(); }
   const used = [...new Set([...FIELDS, ...S.all.flatMap(fieldsOf)])];
-  $("#fieldFilter").replaceChildren(el("option", { value: "" }, "All fields"), ...used.map(f => el("option", { value: f, selected: f === S.field }, f)));
+  const nFlag = S.all.filter(e => e.flag).length;
+  $("#fieldFilter").replaceChildren(el("option", { value: "" }, "All fields"), ...used.map(f => el("option", { value: f, selected: f === S.field }, f)),
+    el("option", { value: "__flagged", selected: S.field === "__flagged" }, `⚑ Flagged (${nFlag})`));
   $("#statTerms").textContent = S.all.length.toLocaleString();
   $("#statFields").textContent = new Set(S.all.flatMap(fieldsOf).filter(f => f !== "Unclassified")).size;
   $("#statPeople").textContent = new Set(S.all.map(e => e.by).filter(Boolean)).size;
@@ -134,7 +136,8 @@ function rebuild() {
 function search() {
   const raw = S.q.trim();
   let list = S.all;
-  if (S.field) list = list.filter(e => fieldsOf(e).includes(S.field));
+  if (S.field === "__flagged") list = list.filter(e => e.flag);
+  else if (S.field) list = list.filter(e => fieldsOf(e).includes(S.field));
   if (!raw) {
     if (S.letter) return list.filter(e => (S.letter === "#" ? !/^[a-z]/.test(e._k) : e._k.startsWith(S.letter))).sort((a, b) => a._k.localeCompare(b._k));
     return [...list].sort((a, b) => (b.updated || "").localeCompare(a.updated || "") || a._k.localeCompare(b._k));
@@ -170,12 +173,20 @@ function highlight(text, q) {
   return text.split(new RegExp(`(${words.join("|")})`, "gi")).map((part, i) => (i % 2 ? el("mark", {}, part) : part));
 }
 
+const ICON_FLAG = '<svg viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg>';
 const ICON_EDIT = '<svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m14 6 4 4"/></svg>';
 const ICON_BOOK = '<svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></svg>';
 
 function card(e) {
   const btn = (html, label, fn) => { const b = el("button", { type: "button", "aria-label": label, onclick: fn }); b.innerHTML = html + `<span>${label}</span>`; return b; };
-  return el("li", { class: "term", id: `t-${e.id}` },
+  const flagBtn = el("button", {
+    type: "button", class: "flag", "aria-pressed": String(!!e.flag),
+    "aria-label": e.flag ? "Flagged for changes — tap to remove flag" : "Flag for changes",
+    title: e.flag ? "Flagged for changes — click to remove flag" : "Flag for changes",
+    onclick: () => toggleFlag(e, flagBtn),
+  });
+  flagBtn.innerHTML = ICON_FLAG;
+  return el("li", { class: "term" + (e.flag ? " flagged" : ""), id: `t-${e.id}` },
     el("div", { class: "term-top" },
       el("h3", { class: "term-en", lang: "en" }, ...highlight(e.en, S.q.trim())),
       el("div", { class: "chips" }, fieldsOf(e).map(f => el("span", { class: "chip" }, f)))),
@@ -190,6 +201,7 @@ function card(e) {
         e.by && e.updated ? " · " : null,
         e.updated ? fmtDate(e.updated) : null),
       el("div", { class: "term-actions" },
+        flagBtn,
         btn(ICON_EDIT, "Edit", () => openEditor(e)))));
 }
 
@@ -197,7 +209,7 @@ function render() {
   const res = search();
   const title = S.q.trim() ? `${res.length.toLocaleString()} result${res.length === 1 ? "" : "s"} for “${S.q.trim()}”`
     : S.letter ? `Terms under ${S.letter.toUpperCase()}` : "Recently added";
-  $("#resultTitle").textContent = title + (S.field ? ` · ${S.field}` : "");
+  $("#resultTitle").textContent = title + (S.field ? ` · ${S.field === "__flagged" ? "Flagged for changes" : S.field}` : "");
   const list = $("#results");
   if (!res.length) {
     list.replaceChildren(el("li", { class: "empty" },
@@ -336,6 +348,7 @@ async function saveEntry(draft, original) {
       const i = source.findIndex(e => e.id === original.id);
       if (i < 0) throw new UserError("Someone else has renamed or removed this term since you opened it. Close this form and reload the page.");
       if ((source[i].updated || "") !== (original.updated || "")) throw new UserError(`@${source[i].by || "someone"} changed this term after you opened it. Reload the page to see their version, then edit again.`);
+      if (source[i].flag) draft.flag = true; // an edit keeps the flag; contributors unflag explicitly
       source.splice(i, 1);
     }
     const c = findConflicts(draft, target);
@@ -348,6 +361,28 @@ async function saveEntry(draft, original) {
   toast(original ? "Changes saved ✓" : `“${draft.en}” added ✓`);
   location.hash = `t=${encodeURIComponent(draft.id)}`;
   jumpToHash();
+}
+
+async function toggleFlag(e, button) {
+  if (!S.user) { toast("Sign in as a contributor to flag terms"); return; }
+  if (button.disabled) return;
+  const on = !e.flag;
+  button.disabled = true; button.setAttribute("aria-pressed", String(on)); button.closest(".term")?.classList.toggle("flagged", on);
+  const p = shardFor(e.en, S.manifest.shards);
+  try {
+    const { changed } = await commitShards(async read => {
+      const list = await read(p);
+      const x = list.find(y => y.id === e.id);
+      if (!x) throw new UserError("This term was changed by someone else — reload the page.");
+      if (on) x.flag = true; else delete x.flag;
+      return { [p]: list };
+    }, `${on ? "Flag" : "Unflag"}: ${e.en}\n\nvia web editor`);
+    S.shards[p] = changed[p]; rebuild();
+    toast(on ? "Flagged for changes ⚑" : "Flag removed");
+  } catch (err) {
+    button.setAttribute("aria-pressed", String(!on)); button.closest(".term")?.classList.toggle("flagged", !on);
+    toast(err instanceof UserError ? err.message : `Could not update flag: ${err.message}`, 5000);
+  } finally { button.disabled = false; }
 }
 
 function suggestViaIssue(d) {

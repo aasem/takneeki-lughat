@@ -9,6 +9,7 @@ A collective volunteer project: an open **English → Urdu dictionary of scienti
 
 - Search in English or Urdu (Nastaliq or Naskh display), filter by field, browse A–Z
 - Light, dark or automatic theme
+- ⚑ Flag any term for changes (contributors); choose "Flagged" in the field filter to see the list
 - Add or correct terms from a phone or a laptop
 - Strong duplicate protection (see below)
 - No server, no database, no hosting cost: the dictionary is plain JSON in this repo, served by GitHub Pages, with full Git history of who changed what
