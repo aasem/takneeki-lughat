@@ -146,7 +146,7 @@
 {"id":"repulsive-energy.physics","en":"repulsive energy","ur":"دافع توانائی","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"repulsive-force.mathematics-physics","en":"repulsive force","ur":"دافع قوت / قوتِ دفع","fields":["Physics","Mathematics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T09:51:14.679Z"},
 {"id":"reset.mathematics","en":"reset","ur":"غیر راغب","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:57:56.870Z","updated":"2026-11-10T09:57:56.870Z"},
-{"id":"residual-flux.mathematics","en":"residual flux","ur":"بقایا بہاوؤ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T10:02:51.475Z"},
+{"id":"residual-flux.mathematics","en":"residual flux","ur":"بقایا بہاؤ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T10:10:43.363Z"},
 {"id":"residual-temperature.mathematics","en":"residual temperature","ur":"بقیہ حرارت","fields":["Mathematics"],"note":"Of the Big Bang.","by":"aasem","added":"2026-11-10T09:56:28.772Z","updated":"2026-11-10T09:59:16.081Z"},
 {"id":"residue.mathematics","en":"residue","ur":"بقیہ","fields":["Mathematics"],"note":"residue integrals.","by":"aasem","added":"2026-11-10T09:56:28.772Z","updated":"2026-11-10T09:56:28.772Z"},
 {"id":"resistance.mathematics","en":"resistance","ur":"مزاحمت","fields":["Mathematics"],"note":"Symbol: R","by":"aasem","added":"2026-11-10T09:56:28.772Z","updated":"2026-11-10T09:56:28.772Z"},

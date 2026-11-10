@@ -44,7 +44,7 @@
 {"id":"nodal-line.mathematics","en":"nodal line","ur":"صفر ہٹاؤ لکیر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:54:08.559Z","updated":"2026-11-10T09:54:08.559Z"},
 {"id":"nodal-point.mathematics","en":"nodal point","ur":"نقطۂ صفر ہٹاؤ","fields":["Mathematics"],"note":"Vibrations.","by":"aasem","added":"2026-11-10T09:54:08.559Z","updated":"2026-11-10T09:54:08.559Z"},
 {"id":"nodal-point-iteration.mathematics","en":"nodal point (iteration)","ur":"جوڑ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:54:08.559Z","updated":"2026-11-10T09:54:08.559Z"},
-{"id":"nodal-voltage.mathematics","en":"nodal voltage","ur":"دباوؤ جوڑ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T10:02:51.475Z"},
+{"id":"nodal-voltage.mathematics","en":"nodal voltage","ur":"دباؤ جوڑ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T10:10:43.363Z"},
 {"id":"node-circuit.mathematics","en":"node (circuit)","ur":"جوڑ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:54:08.559Z","updated":"2026-11-10T09:54:08.559Z"},
 {"id":"node-of-a-vibrating-string.mathematics","en":"node (of a vibrating string)","ur":"عقدہ / نقطۂ صفر ہٹاؤ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:54:08.559Z","updated":"2026-11-10T09:54:08.559Z"},
 {"id":"noise-power.mathematics","en":"noise power","ur":"طاقتِ شور","fields":["Mathematics"],"note":"In a resistor.","by":"aasem","added":"2026-11-10T09:54:08.559Z","updated":"2026-11-10T09:54:08.559Z"},

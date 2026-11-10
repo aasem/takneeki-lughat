@@ -31,7 +31,7 @@
 {"id":"electrical-terminal.mathematics","en":"electrical terminal","ur":"برقی سِرا","fields":["Mathematics"],"note":"Plural: برقی سِرے","by":"aasem","added":"2026-11-10T09:59:16.081Z","updated":"2026-11-10T09:59:16.081Z"},
 {"id":"electric-circuit.mathematics","en":"electric circuit","ur":"برقی دور","fields":["Mathematics"],"note":"موصل کا کوئی ایسا نظام جسے اس طرح ترتیب دیا جائے اور یوں ملایا جائے کہ برقی رو اس کے ذریعے گزر سکے","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T09:49:08.266Z"},
 {"id":"electric-current.mathematics","en":"electric current","ur":"برقی رو","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"electric-flux.mathematics","en":"electric flux","ur":"برقی بہاوؤ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T10:02:51.475Z"},
+{"id":"electric-flux.mathematics","en":"electric flux","ur":"برقی بہاؤ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T10:10:43.363Z"},
 {"id":"electrician.physics","en":"electrician","ur":"برقیات داں","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"electricity.mathematics","en":"electricity","ur":"برق","fields":["Mathematics"],"note":"Suggestions: matric","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"electric-potential.mathematics","en":"electric potential","ur":"برقی مخفیہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:55:39.922Z","updated":"2026-11-10T09:55:39.922Z"},
