@@ -3,7 +3,7 @@
 
 A collective volunteer project: an open **English → Urdu dictionary of scientific and technical terms**, made to support translating science and engineering textbooks into Urdu. (`takneeki-lughat` is the repository name.)
 
-© 2026 Asim Bakhshi and Khalid Khan
+© 2026 Asim Bakhshi and Khalid Khan · Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) (see [LICENSE](LICENSE))
 
 **Live:** https://aasem.github.io/takneeki-lughat/
 
@@ -80,3 +80,7 @@ About 2,900 terms were imported from the team spreadsheet `english_to_urdu_words
 ### Quantum mechanics word list (November 2026)
 
 788 further terms were imported from `english_to_urdu_wordsQuantumMechanics_OLD.ods` (sheet *words*), tagged **Physics**. Terms already in the dictionary were not added again; where this older sheet gave a different Urdu rendering, the existing Urdu was kept.
+
+## Licence
+
+The dictionary is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) licence (full text in [LICENSE](LICENSE)). You may copy, print, translate and adapt it, including in textbooks, provided you credit *English–Urdu Dictionary of Scientific and Technical Terms* (Asim Bakhshi and Khalid Khan) and share adaptations under the same licence. Material from sources cited on individual entries remains subject to its owners' rights.
