@@ -85,3 +85,7 @@ About 2,900 terms were imported from the team spreadsheet `english_to_urdu_words
 ## Licence
 
 The dictionary is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) licence (full text in [LICENSE](LICENSE)). You may copy, print, translate and adapt it, including in textbooks, provided you credit *English–Urdu Dictionary of Scientific and Technical Terms* (Asim Bakhshi and Khalid Khan) and share adaptations under the same licence. Material drawn from published glossaries remains subject to its owners’ rights.
+
+## Updating the site
+
+After changing `assets/app.js`, `assets/style.css` or `assets/core.js`, bump the `?v=` version in `index.html` (two places) and in the `core.js` import at the top of `assets/app.js`, so browsers load the new files instead of a cached copy.
