@@ -1,7 +1,7 @@
 import {
   FIELDS, cleanEn, cleanUr, enKey, urKey, fieldsOf, makeId, shardFor, validateEntry,
   findConflicts, normaliseEntry, serialiseShard,
-} from "./core.js?v=20261110b";
+} from "./core.js?v=20261110c";
 
 // ---------------------------------------------------------------- config
 const REPO = "aasem/takneeki-lughat";
@@ -174,6 +174,7 @@ function highlight(text, q) {
 }
 
 const ICON_FLAG = '<svg viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg>';
+const ICON_TRASH = '<svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg>';
 const ICON_EDIT = '<svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m14 6 4 4"/></svg>';
 
 function card(e) {
@@ -195,14 +196,15 @@ function card(e) {
     el("div", { class: "term-foot" },
       el("span", { class: "chips" }, fieldsOf(e).map(f => el("span", { class: "chip" }, f))),
       el("span", { class: "meta" },
-        e.by ? ["by ", /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/.test(e.by)
+        e.by ? [/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/.test(e.by)
           ? el("a", { class: "by", href: `https://github.com/${e.by}`, target: "_blank", rel: "noopener", title: `${e.by} on GitHub` }, e.by)
           : e.by] : null,
         e.by && e.updated ? " · " : null,
         e.updated ? fmtDate(e.updated) : null),
       el("div", { class: "term-actions" },
         flagBtn,
-        btn(ICON_EDIT, "Edit", () => openEditor(e)))));
+        btn(ICON_EDIT, "Edit", () => openEditor(e)),
+        (() => { const b = btn(ICON_TRASH, "Delete", () => deleteTerm(e, b)); b.classList.add("del"); return b; })())));
 }
 
 function render() {
@@ -368,6 +370,35 @@ async function saveEntry(draft, original) {
   toast(original ? "Changes saved ✓" : `“${draft.en}” added ✓`);
   location.hash = `t=${encodeURIComponent(draft.id)}`;
   jumpToHash();
+}
+
+// Two-tap delete: the first tap arms the button for 4 s, the second deletes.
+async function deleteTerm(e, button) {
+  if (!S.user) { toast("Sign in as a contributor to delete terms"); return; }
+  if (button.disabled) return;
+  if (!button.classList.contains("armed")) {
+    button.classList.add("armed"); button.title = "Tap again to delete";
+    toast(`Tap the delete icon again to delete “${e.en}”`);
+    clearTimeout(button._t); button._t = setTimeout(() => { button.classList.remove("armed"); button.title = "Delete"; }, 4000);
+    return;
+  }
+  clearTimeout(button._t); button.disabled = true;
+  const p = shardFor(e.en, S.manifest.shards);
+  try {
+    const { changed } = await commitShards(async read => {
+      const list = await read(p);
+      const i = list.findIndex(y => y.id === e.id);
+      if (i < 0) throw new UserError("This term was already removed or renamed by someone else — reload the page.");
+      if ((list[i].updated || "") !== (e.updated || "")) throw new UserError(`@${list[i].by || "someone"} changed this term just now — reload the page and check before deleting.`);
+      list.splice(i, 1);
+      return { [p]: list };
+    }, `Delete: ${e.en} → ${e.ur}\n\nvia web editor`);
+    S.shards[p] = changed[p]; rebuild();
+    toast(`“${e.en}” deleted`);
+  } catch (err) {
+    button.disabled = false; button.classList.remove("armed"); button.title = "Delete";
+    toast(err instanceof UserError ? err.message : `Could not delete: ${err.message}`, 5000);
+  }
 }
 
 async function toggleFlag(e, button) {
