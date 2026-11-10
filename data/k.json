@@ -1,15 +1,15 @@
 [
-{"id":"kappa-greek-alphabet.unclassified","en":"kappa (greek alphabet)","ur":"کاہپا","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"karl-weierstrass.unclassified","en":"Karl Weierstrass","ur":"کارل وائشسٹراس","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"kelvin.unclassified","en":"Kelvin","ur":"کیلون","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"kepler-johannes-kepler.unclassified","en":"Kepler; Johannes Kepler","ur":"یوہانس کپلر","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"kick-inductive-kick-kickback-voltage.unclassified","en":"kick: inductive kick: kickback voltage","ur":"امالی لات","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"kilo.unclassified","en":"kilo","ur":"کِلو","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"kilowatt-hour.unclassified","en":"Kilowatt-hour","ur":"کلو واٹ گھنٹہ؛ برقی توانائی کی تجارتی اکائی","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"kinematics.unclassified","en":"kinematics","ur":"مجرد حرکیات","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"kinetic-energy.unclassified","en":"kinetic energy","ur":"حرکی توانائی","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"kink-quantum-mech.unclassified","en":"kink (quantum mech)","ur":"بل","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"kirchoff-gustav-robert-kirchoff.unclassified","en":"Kirchoff: Gustav Robert Kirchoff","ur":"گستاف روبرٹ کرخوف","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"kirchoff-s-current-law-voltage-law.unclassified","en":"Kirchoff's current law, voltage law","ur":"کرخوف قانونِ رو، کرخوف قانونِ دباو","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"kronecker-delta-leopold-kronecker.unclassified","en":"Kronecker delta, Leopold Kronecker","ur":"لیوپولڈ کرونیکر، کرونیکر ضرب، کرونیکر ڈیلٹا","fields":["Unclassified"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"}
+{"id":"kappa-greek-alphabet.mathematics","en":"kappa (greek alphabet)","ur":"کاہپا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"karl-weierstrass.mathematics","en":"Karl Weierstrass","ur":"کارل وائشسٹراس","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"kelvin.mathematics","en":"Kelvin","ur":"کیلون","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"kepler-johannes-kepler.mathematics","en":"Kepler; Johannes Kepler","ur":"یوہانس کپلر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"kick-inductive-kick-kickback-voltage.mathematics","en":"kick: inductive kick: kickback voltage","ur":"امالی لات","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"kilo.mathematics","en":"kilo","ur":"کِلو","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"kilowatt-hour.mathematics","en":"Kilowatt-hour","ur":"کلو واٹ گھنٹہ؛ برقی توانائی کی تجارتی اکائی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"kinematics.mathematics","en":"kinematics","ur":"مجرد حرکیات","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"kinetic-energy.mathematics","en":"kinetic energy","ur":"حرکی توانائی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"kink-quantum-mech.mathematics","en":"kink (quantum mech)","ur":"بل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"kirchoff-gustav-robert-kirchoff.mathematics","en":"Kirchoff: Gustav Robert Kirchoff","ur":"گستاف روبرٹ کرخوف","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"kirchoff-s-current-law-voltage-law.mathematics","en":"Kirchoff's current law, voltage law","ur":"کرخوف قانونِ رو، کرخوف قانونِ دباو","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"kronecker-delta-leopold-kronecker.mathematics","en":"Kronecker delta, Leopold Kronecker","ur":"لیوپولڈ کرونیکر، کرونیکر ضرب، کرونیکر ڈیلٹا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"}
 ]

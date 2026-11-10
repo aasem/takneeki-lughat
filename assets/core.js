@@ -7,8 +7,7 @@ export const ALLOWED_KEYS = ["id", "en", "ur", "fields", "note", "cite", "by", "
 
 // Subject tags. A term may carry several (e.g. "vector": Mathematics + Physics).
 // To open a new subject, add it here — the app and the validator both read this list.
-// "Unclassified" marks imported terms whose subject hasn't been decided yet — a work queue.
-export const FIELDS = ["Physics", "Mathematics", "Unclassified"];
+export const FIELDS = ["Physics", "Mathematics", "General"];
 
 const DASHES = /[‐-―−]/g;
 const ARABIC_SCRIPT = /[؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿]/;
