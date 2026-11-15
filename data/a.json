@@ -102,7 +102,7 @@
 {"id":"accuracy.mathematics","en":"accuracy","ur":"درستگی","fields":["Mathematics"],"note":"3-digit accuracy — اشاریہ کے بعد تین ہندسوں تک درستگی","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"ac-current-ac-voltage.mathematics","en":"AC current، AC voltage","ur":"بدلتا رو، بدلتا برقی دباؤ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"ac-current-supply.mathematics","en":"AC current supply","ur":"بدلتا منبعِ برقی رو","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:57:56.870Z","updated":"2026-11-10T09:57:56.870Z"},
-{"id":"ac-motor.mathematics","en":"AC motor","ur":"بدلتا رو موٹر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
+{"id":"ac-motor.mathematics","en":"AC motor","ur":"بدلتا رو موٹر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z","flag":true},
 {"id":"ac-power-supply.mathematics","en":"AC power supply","ur":"بدلتا منبع","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:55:39.922Z","updated":"2026-11-10T09:55:39.922Z"},
 {"id":"ac-resistance.mathematics","en":"AC resistance","ur":"بدلتا رو مزاحمت","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:56:28.772Z","updated":"2026-11-10T09:56:28.772Z"},
 {"id":"across.mathematics","en":"across","ur":"آرپار، عبوری، عبوری کرنا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
