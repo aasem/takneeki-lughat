@@ -169,7 +169,7 @@
 {"id":"allowed-energy.mathematics","en":"allowed energy","ur":"جائز توانائی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"along.mathematics","en":"along","ur":"ساتھ ساتھ, ہمراہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"alternate.mathematics","en":"alternate","ur":"باری باری، ایک کے بعد دوسرا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"alternating-current.mathematics","en":"alternating current","ur":"بدلتا رو","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"alternating-current.mathematics","en":"alternating current","ur":"بدلتا رو","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"alternating-series.mathematics","en":"alternating series","ur":"بدلتا تسلسل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"alternating-series-estimation-theorem.mathematics","en":"alternating series estimation theorem","ur":"مسئلۂ بدلتے تسلسل کا اندازہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:59:16.081Z","updated":"2026-11-10T09:59:16.081Z"},
 {"id":"alternating-series-theorem.mathematics","en":"alternating series theorem","ur":"مسئلہ بدلتا تسلسل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
