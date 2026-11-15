@@ -4,7 +4,7 @@
 {"id":"abaxial.physics","en":"abaxial","ur":"بدر محوری","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"aberration.physics","en":"aberration","ur":"فتور","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"aberration-ellipse.physics","en":"aberration ellipse","ur":"فتور بیض","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
-{"id":"aberration-error.physics","en":"aberration error","ur":"فتور سہو","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
+{"id":"aberration-error.physics","en":"aberration error","ur":"فتور سہو","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z","flag":true},
 {"id":"ability-suffix.physics","en":"-ability (suffix)","ur":"پذیری","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"ab-initio.physics","en":"ab initio","ur":"ابتدا سے","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"able.physics","en":"able","ur":"پذیر","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
