@@ -75,7 +75,7 @@
 {"id":"ac-analysis.mathematics","en":"AC analysis","ur":"بدلتا تجزیہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"accelerated.physics","en":"accelerated","ur":"اسراعی","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"accelerating.physics","en":"accelerating","ur":"مسرع / سرعت پذیر","fields":["Physics"],"by":"aasem","added":"2026-11-10T09:14:50.634Z","updated":"2026-11-10T09:14:50.634Z"},
-{"id":"accelerating-electrode.physics","en":"accelerating electrode","ur":"اسراعی الیکٹروڈ / برقیرہ","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
+{"id":"accelerating-electrode.physics","en":"accelerating electrode","ur":"اسراعی الیکٹروڈ / برقیرہ","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z","flag":true},
 {"id":"accelerating-period.physics","en":"accelerating period","ur":"اسراعی دور","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"accelerating-tube.physics","en":"accelerating tube","ur":"اسراعی نلی","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"accelerating-voltage.physics","en":"accelerating voltage","ur":"اسراعی وولٹیج","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
