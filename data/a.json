@@ -125,7 +125,7 @@
 {"id":"adjoint-matrix.mathematics","en":"adjoint matrix","ur":"شریک قالب","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"adjust.mathematics","en":"adjust","ur":"درست کرنا، مطابق بنانا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"admit.physics","en":"admit","ur":"تسلیم کرنا","fields":["Physics"],"note":"admits a solution — حل تسلیم کرتا ہے","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
-{"id":"admittance.mathematics","en":"admittance","ur":"برقی فراوانی","fields":["Mathematics"],"note":"Y = 1/Z","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:52:36.987Z"},
+{"id":"admittance.mathematics","en":"admittance","ur":"برقی فراوانی","fields":["Mathematics"],"note":"Y = 1/Z","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:52:36.987Z","flag":true},
 {"id":"adolf-fick.mathematics","en":"Adolf Fick","ur":"اڈولف فک","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"adrien-marie-legendre.mathematics","en":"Adrien Marie Legendre","ur":"اڈریان مری لیژانڈر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T09:54:08.559Z"},
 {"id":"advanced-education.physics","en":"advanced education","ur":"اعلٰی تعلیم","fields":["Physics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
