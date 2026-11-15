@@ -12,7 +12,7 @@
 {"id":"band-stop-filter.mathematics","en":"band stop filter","ur":"پٹی روک فلٹر / پٹی روک چھلنی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T09:51:14.679Z"},
 {"id":"band-structure.physics","en":"Band structure","ur":"پٹی دار ساخت","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"bandwidth.mathematics","en":"bandwidth","ur":"عرض پٹی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"bar-graph.mathematics","en":"bar graph","ur":"ڈبہ ترسیم","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"bar-graph.mathematics","en":"bar graph","ur":"ڈبہ ترسیم","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"barkhausen-criteria.mathematics","en":"Barkhausen criteria","ur":"برکہازن کا اصول","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"baryon.physics","en":"baryon","ur":"بیریان","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"base-2.mathematics","en":"base 2","ur":"اساس دو","fields":["Mathematics"],"note":"Binary (digital).","by":"aasem","added":"2026-11-10T09:49:08.266Z","updated":"2026-11-10T09:49:08.266Z"},
