@@ -206,7 +206,7 @@
 {"id":"angle-of-inclination.mathematics","en":"angle of inclination","ur":"زاویۂ میلان","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:52:36.987Z","updated":"2026-11-10T09:52:36.987Z"},
 {"id":"angle-of-intersection.mathematics","en":"angle of intersection","ur":"زاویۂ تقاطع","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:52:36.987Z","updated":"2026-11-10T09:52:36.987Z"},
 {"id":"angular-acceleration.physics","en":"angular acceleration","ur":"زاویائی اسراع","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
-{"id":"angular-displacement.mathematics","en":"angular displacement","ur":"زاویائی ہٹاو، زاویائی نقل مکان","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"angular-displacement.mathematics","en":"angular displacement","ur":"زاویائی ہٹاو، زاویائی نقل مکان","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"angular-form-complex-numbers.mathematics","en":"angular form (complex numbers)","ur":"زاویائی طرز","fields":["Mathematics"],"note":"Writing a complex number as r∠θ.","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"angular-frequency.mathematics","en":"angular frequency","ur":"زاویاتی تعدادِ ارتعاش / زاویائی تعدد","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T09:51:14.679Z"},
 {"id":"angular-speed.mathematics","en":"angular speed","ur":"زاویاتی رفتار","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
