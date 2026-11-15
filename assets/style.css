@@ -153,7 +153,7 @@ select, .fld input, .fld textarea {
 .term-en::first-letter { text-transform: uppercase; }
 .chips { display: flex; gap: 4px; flex: none; }
 .chip { font: 600 10px/1 "Instrument Sans", sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--teal); background: color-mix(in srgb, var(--teal) 10%, transparent); border-radius: 999px; padding: 4px 7px; }
-.term-ur { margin: 0; font-family: var(--ur-font); font-size: 18px; line-height: 66px; height: 58px; overflow-y: visible !important; overflow-x: clip !important; direction: rtl; text-align: right; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.term-ur { margin: 0 -12px; padding: 0 20px 0 12px; font-family: var(--ur-font); font-size: 18px; line-height: 66px; height: 58px; overflow-y: visible !important; overflow-x: clip !important; direction: rtl; text-align: right; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 :root.naskh .term-ur { font-size: 21px; line-height: 58px; }
 .term-pv { margin: 0; font-size: 13px; line-height: 18px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .term-pv .pv-more { color: var(--teal); font-weight: 600; }
