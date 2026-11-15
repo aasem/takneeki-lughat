@@ -259,7 +259,7 @@
 {"id":"approximate-value.mathematics","en":"approximate value","ur":"اندازاً قیمت","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"approximation.mathematics","en":"approximation","ur":"تقریب / تخمین / تخمینہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"approximation-error.mathematics","en":"approximation error","ur":"خللِ تخمین","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
-{"id":"approximation-polynomial.mathematics","en":"approximation polynomial","ur":"تخمینی کثیر رکنی / مشابہ کثیر رکنی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"approximation-polynomial.mathematics","en":"approximation polynomial","ur":"تخمینی کثیر رکنی / مشابہ کثیر رکنی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"a-priori.physics","en":"a priori","ur":"قبل از وقت","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T10:02:51.475Z"},
 {"id":"aquarium.mathematics","en":"aquarium","ur":"مچھلی گھر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T10:02:51.475Z"},
 {"id":"arbitrarily-large.mathematics","en":"arbitrarily large","ur":"کسی بھی بڑے عدد سے زیادہ بڑا","fields":["Mathematics"],"note":"f is non-negative for arbitrarily large x: for every real number n, f is non-negative for some x greater than n.","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z","flag":true},
