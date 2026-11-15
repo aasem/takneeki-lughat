@@ -159,7 +159,7 @@
 {"id":"algebraic-function.mathematics","en":"algebraic function","ur":"الجبرائی تفاعل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"algebraic-multiplicity.mathematics","en":"algebraic multiplicity","ur":"الجبرائی کثرت","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"algebraic-number.mathematics","en":"algebraic number","ur":"الجبرائی عدد","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
-{"id":"algorithm-algorithmic.mathematics","en":"algorithm algorithmic","ur":"الخوارزم، الخوارزمی","fields":["Mathematics"],"note":"Suggestions: محمد ابن مومی الخوارزمی","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"algorithm-algorithmic.mathematics","en":"algorithm algorithmic","ur":"الخوارزم، الخوارزمی","fields":["Mathematics"],"note":"Suggestions: محمد ابن مومی الخوارزمی","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"align.mathematics","en":"align","ur":"سیدھ میں لانا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"aligned.mathematics","en":"aligned","ur":"ہم صف / صف بستہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"alignment.mathematics","en":"alignment","ur":"صف بندی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
