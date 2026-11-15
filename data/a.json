@@ -111,7 +111,7 @@
 {"id":"active-high.mathematics","en":"active high","ur":"بلند عمل پیرا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"active-mode-transistor.mathematics","en":"active mode (transistor)","ur":"افزائندہ حال","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:59:16.081Z"},
 {"id":"acute-angle.mathematics","en":"acute angle","ur":"زاویہ حادہ","fields":["Mathematics"],"note":"An angle of less than 90°.","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
-{"id":"ac-voltage.mathematics","en":"AC voltage","ur":"بدلتا رو برقی دباؤ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
+{"id":"ac-voltage.mathematics","en":"AC voltage","ur":"بدلتا رو برقی دباؤ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z","flag":true},
 {"id":"adder.mathematics","en":"adder","ur":"جمع کار","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"adder-subtractor.mathematics","en":"adder-subtractor","ur":"جمع و منفی کار","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"addition.mathematics","en":"addition","ur":"جمع","fields":["Mathematics"],"note":"In the sense of inclusion: شمولیت — addition or deletion: شمولیت یا کٹوتی","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:57:56.870Z"},
