@@ -169,7 +169,7 @@
 {"id":"motivation.physics","en":"motivation","ur":"حوصلہ افزائی","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"motorway.mathematics","en":"motorway","ur":"موٹروے","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"multinomial-distribution.mathematics","en":"multinomial distribution","ur":"متعدد رکنی تقسیم","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
-{"id":"multiple.mathematics-physics","en":"multiple","ur":"متعدد / مضرب","fields":["Physics","Mathematics"],"note":"a multiple of eˣ","by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T09:54:08.559Z"},
+{"id":"multiple.mathematics-physics","en":"multiple","ur":"مضرب","fields":["Physics","Mathematics"],"note":"a multiple of eˣ","by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-15T13:11:15.236Z"},
 {"id":"multiple-integral.mathematics","en":"multiple integral","ur":"تکمل بالکثرت","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:54:08.559Z","updated":"2026-11-10T09:54:08.559Z"},
 {"id":"multiple-point-of-a-curve.mathematics","en":"multiple point (of a curve)","ur":"متعدد نقطہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:54:08.559Z","updated":"2026-11-10T09:54:08.559Z"},
 {"id":"multiple-root.physics","en":"multiple root","ur":"متعدد جذر / مرکب جذر","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T09:56:28.772Z"},
