@@ -35,7 +35,6 @@
 {"id":"absolute-ohm.physics","en":"absolute ohm","ur":"مطلق اوم","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absolute-parallax.physics","en":"absolute parallax","ur":"مطلق منظری اختلاف","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absolute-pressure.physics","en":"absolute pressure","ur":"مطلق داب","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
-{"id":"absolute-symmetry.physics","en":"absolute symmetry","ur":"مطلق سمٹری / تناسب","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z","flag":true},
 {"id":"absolute-system-of-units.physics","en":"absolute system of units","ur":"مطلق اکائی نظام","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absolute-temperature.mathematics-physics","en":"absolute temperature","ur":"مطلق تاپ / ٹمپریچر / مطلق حرارت / حتمی حرارت","fields":["Physics","Mathematics"],"note":"In kelvin.","by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-10T09:59:16.081Z","flag":true},
 {"id":"absolute-temperature-scale.physics","en":"absolute temperature scale","ur":"مطلق ٹمپریچر پیمانہ","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z","flag":true},
