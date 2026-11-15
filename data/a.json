@@ -39,7 +39,6 @@
 {"id":"absolute-temperature-scale.physics","en":"absolute temperature scale","ur":"مطلق ٹمپریچر پیمانہ","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z","flag":true},
 {"id":"absolute-term.physics","en":"absolute term","ur":"مطلق ٹرم","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absolute-unit.physics","en":"absolute unit","ur":"مطلق اکائی","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
-{"id":"absolute-value.mathematics-physics","en":"absolute value","ur":"مطلق قدر / مطلق قیمت (میٹرک کتاب)","fields":["Physics","Mathematics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-10T03:17:05.112Z","flag":true},
 {"id":"absolute-zero.physics","en":"absolute zero","ur":"مطلق صفر","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z","flag":true},
 {"id":"absorb.physics","en":"absorb","ur":"جذب کرنا","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absorbed.physics","en":"absorbed","ur":"جذب شدہ","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
