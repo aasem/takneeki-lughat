@@ -82,7 +82,7 @@
 {"id":"acceleration.physics","en":"acceleration","ur":"اسراع","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"acceleration-due-to-gravity.physics","en":"acceleration due to gravity","ur":"مادی کشش اسراع","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"accelerator.physics","en":"accelerator","ur":"سرعت کار، ایکسیلریٹر","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
-{"id":"acceptable.physics","en":"acceptable","ur":"مقبول","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
+{"id":"acceptable.physics","en":"acceptable","ur":"مقبول","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z","flag":true},
 {"id":"acceptable-quality-level.mathematics","en":"acceptable quality level","ur":"سطحِ قابلِ قبول معیار","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:55:39.922Z","updated":"2026-11-10T09:55:39.922Z"},
 {"id":"acceptance-region.mathematics","en":"acceptance region","ur":"خطۂ منظوری","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:56:28.772Z","updated":"2026-11-10T09:56:28.772Z"},
 {"id":"acceptance-sampling.mathematics","en":"acceptance sampling","ur":"قبولیت نمونہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:57:56.870Z","updated":"2026-11-10T09:57:56.870Z"},
