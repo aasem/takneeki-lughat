@@ -157,7 +157,7 @@
 {"id":"alfred-james-lotka.mathematics","en":"Alfred James Lotka","ur":"الفرڈ جیمز لوٹکا","fields":["Mathematics"],"note":"Lotka–Volterra predator–prey model.","by":"aasem","added":"2026-11-10T09:54:08.559Z","updated":"2026-11-10T09:54:08.559Z"},
 {"id":"algebraic-combination-of-functions.mathematics","en":"algebraic combination (of functions)","ur":"الجبرائی ترکیب","fields":["Mathematics"],"note":"Plural: تفاعلات کی الجبرائی ترکیبات","by":"aasem","added":"2026-11-10T09:49:08.266Z","updated":"2026-11-10T09:49:08.266Z"},
 {"id":"algebraic-function.mathematics","en":"algebraic function","ur":"الجبرائی تفاعل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
-{"id":"algebraic-multiplicity.mathematics","en":"algebraic multiplicity","ur":"الجبرائی کثرت","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"algebraic-multiplicity.mathematics","en":"algebraic multiplicity","ur":"الجبرائی کثرت","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"algebraic-number.mathematics","en":"algebraic number","ur":"الجبرائی عدد","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"algorithm-algorithmic.mathematics","en":"algorithm algorithmic","ur":"الخوارزم، الخوارزمی","fields":["Mathematics"],"note":"Suggestions: محمد ابن مومی الخوارزمی","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"align.mathematics","en":"align","ur":"سیدھ میں لانا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
