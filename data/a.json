@@ -144,7 +144,7 @@
 {"id":"air-conditioner.mathematics","en":"air conditioner","ur":"ایئر کنڈشنر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"air-core.mathematics","en":"air core","ur":"خلائی قالب","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:49:08.266Z","updated":"2026-11-10T09:49:08.266Z"},
 {"id":"airfoil.mathematics","en":"airfoil","ur":"ہوائی پترا","fields":["Mathematics"],"note":"British spelling: aerofoil.","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
-{"id":"air-gap.mathematics","en":"air gap","ur":"خلائی درز","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:52:36.987Z","updated":"2026-11-10T09:52:36.987Z"},
+{"id":"air-gap.mathematics","en":"air gap","ur":"خلائی درز","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:52:36.987Z","updated":"2026-11-10T09:52:36.987Z","flag":true},
 {"id":"air-gun.physics","en":"air gun","ur":"ہوائی بندوق","fields":["Physics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"airy-equation.physics","en":"Airy equation","ur":"مساواتِ ایئری","fields":["Physics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"airy-function.physics","en":"Airy function","ur":"تفاعلِ ایئری","fields":["Physics"],"note":"Plural: تفاعلاتِ ایئری","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
