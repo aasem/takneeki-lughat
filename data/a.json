@@ -63,7 +63,7 @@
 {"id":"absorption-discontinuity.physics","en":"absorption discontinuity","ur":"جاذبیت غیر تسلسل","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absorption-edge.physics","en":"absorption edge","ur":"جاذبیت کور","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absorption-factor.physics","en":"absorption factor","ur":"جاذبیت جذر","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
-{"id":"absorption-limit.physics","en":"absorption limit","ur":"جاذبیت حد","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z","flag":true},
+{"id":"absorption-limit.physics","en":"absorption limit","ur":"جاذبیت حد","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absorption-rate.physics","en":"absorption rate","ur":"شرحِ انجذاب","fields":["Physics"],"note":"Suggestion: جاذبی شرح (marked as uncertain in the source)","by":"aasem","added":"2026-11-10T09:14:50.634Z","updated":"2026-11-10T09:14:50.634Z"},
 {"id":"absorption-spectrum.physics","en":"absorption spectrum","ur":"جاذبیت اسپیکٹرم / طیف","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absorptive.physics","en":"absorptive","ur":"جاذبی","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
