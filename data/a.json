@@ -104,7 +104,7 @@
 {"id":"ac-current-supply.mathematics","en":"AC current supply","ur":"بدلتا منبعِ برقی رو","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:57:56.870Z","updated":"2026-11-10T09:57:56.870Z"},
 {"id":"ac-motor.mathematics","en":"AC motor","ur":"بدلتا رو موٹر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z","flag":true},
 {"id":"ac-power-supply.mathematics","en":"AC power supply","ur":"بدلتا منبع","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:55:39.922Z","updated":"2026-11-10T09:55:39.922Z"},
-{"id":"ac-resistance.mathematics","en":"AC resistance","ur":"بدلتا رو مزاحمت","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:56:28.772Z","updated":"2026-11-10T09:56:28.772Z"},
+{"id":"ac-resistance.mathematics","en":"AC resistance","ur":"بدلتا رو مزاحمت","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:56:28.772Z","updated":"2026-11-10T09:56:28.772Z","flag":true},
 {"id":"across.mathematics","en":"across","ur":"آرپار، عبوری، عبوری کرنا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"action-at-a-distance.physics","en":"action at a distance","ur":"فاصلاتی عمل","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"active-component.mathematics","en":"active component","ur":"عامل پرزہ / عامل جزو","fields":["Mathematics"],"note":"e.g. a transistor.","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:55:39.922Z"},
