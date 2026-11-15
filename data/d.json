@@ -101,7 +101,7 @@
 {"id":"determinate.mathematics","en":"determinate","ur":"قابلِ معلوم","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
 {"id":"determine.mathematics-physics","en":"determine","ur":"تعین کرنا، طے کرنا","fields":["Physics","Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T09:51:14.679Z"},
 {"id":"determined.physics","en":"determined","ur":"تعین شدہ / متعین","fields":["Physics"],"by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
-{"id":"determined-up-to-multiples-of-2.mathematics","en":"determined up to multiples of 2","ur":"دو کی مضرب تک تعین کی جا سکتی ہے","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T10:02:51.475Z"},
+{"id":"determined-up-to-multiples-of-2.mathematics","en":"determined up to multiples of 2","ur":"دو کی مضرب تک تعین کی جا سکتی ہے","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T10:02:51.475Z","flag":true},
 {"id":"deterministic.physics","en":"deterministic","ur":"تعیینی","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"deuterium.physics","en":"deuterium","ur":"ڈیوٹیریم","fields":["Physics"],"by":"aasem","added":"2026-11-10T09:52:36.987Z","updated":"2026-11-10T09:52:36.987Z"},
 {"id":"deuteron.physics","en":"deuteron","ur":"ڈیوٹیران","fields":["Physics"],"by":"aasem","added":"2026-11-10T09:52:36.987Z","updated":"2026-11-10T09:52:36.987Z"},
