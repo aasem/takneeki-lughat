@@ -69,7 +69,7 @@
 {"id":"absorptive.physics","en":"absorptive","ur":"جاذبی","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absorptive-power.physics","en":"absorptive power","ur":"جاذبی طاقت","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absorptivity.physics","en":"absorptivity","ur":"جذبیت","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
-{"id":"abstract.mathematics","en":"abstract","ur":"تصوراتی، خلاصہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"abstract.mathematics","en":"abstract","ur":"تصوراتی، خلاصہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"abundance.physics","en":"abundance","ur":"کثرت","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"ac.mathematics","en":"AC","ur":"بدلتا رو","fields":["Mathematics"],"note":"Alternating current.","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"ac-analysis.mathematics","en":"AC analysis","ur":"بدلتا تجزیہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
