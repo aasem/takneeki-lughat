@@ -181,7 +181,7 @@
 {"id":"ampere.mathematics","en":"ampere","ur":"ایمپیئر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"ampere-s-circuital-law.mathematics","en":"ampere's circuital law","ur":"ایمپیئر کا دوری قانون","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"amplification.physics","en":"amplification","ur":"افزائش","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
-{"id":"amplifier.mathematics","en":"amplifier","ur":"افزائش کار، ایمپلی فائر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"amplifier.mathematics","en":"amplifier","ur":"افزائش کار، ایمپلی فائر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"amplitude.mathematics","en":"amplitude","ur":"حیط، حیطہ / حیط: کسی لہر کے وسطی حصہ سے اس کے بالائی یا نچلے حصوں کے درمیان کا فاصلہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T09:59:16.081Z"},
 {"id":"amplitude-modulation.mathematics","en":"amplitude modulation","ur":"حیطہ ترمیم","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:54:08.559Z","updated":"2026-11-10T09:54:08.559Z"},
 {"id":"amplitude-spectrum.mathematics","en":"amplitude spectrum","ur":"مقداری طیف","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:57:56.870Z","updated":"2026-11-10T09:57:56.870Z"},
