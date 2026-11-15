@@ -34,7 +34,6 @@
 {"id":"absolute-motion.physics","en":"absolute motion","ur":"مطلق حرکت","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absolute-ohm.physics","en":"absolute ohm","ur":"مطلق اوم","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absolute-parallax.physics","en":"absolute parallax","ur":"مطلق منظری اختلاف","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
-{"id":"absolute-permittivity.physics","en":"absolute permittivity","ur":"مطلق برقی سرایت","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z","flag":true},
 {"id":"absolute-pressure.physics","en":"absolute pressure","ur":"مطلق داب","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z"},
 {"id":"absolute-scale-of-temperature.physics","en":"absolute scale of temperature","ur":"مطلق داب پیمانہ","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z","flag":true},
 {"id":"absolute-symmetry.physics","en":"absolute symmetry","ur":"مطلق سمٹری / تناسب","fields":["Physics"],"by":"aasem","added":"2026-11-07T13:30:51.730Z","updated":"2026-11-07T13:30:51.730Z","flag":true},
