@@ -195,7 +195,7 @@
 {"id":"analytic-function.mathematics","en":"analytic function","ur":"تحلیلی تفاعل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"analyticity.mathematics","en":"analyticity","ur":"تحلیلی ہونا، تحلیل پذیری","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"analytic-method.mathematics","en":"analytic method","ur":"تحلیل طریقہ کار یا ترکیب","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"and-gate.mathematics","en":"AND gate","ur":"ضرب گیٹ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
+{"id":"and-gate.mathematics","en":"AND gate","ur":"ضرب گیٹ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z","flag":true},
 {"id":"and-or.physics","en":"and/or","ur":"دونوں یا (ان میں سے) کوئی ایک","fields":["Physics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"andre-louis-cholesky.mathematics","en":"Andre Louis Cholesky","ur":"اندرِ لوئی شولسکی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"angioplasty.mathematics","en":"angioplasty","ur":"انجویپلاسٹی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
