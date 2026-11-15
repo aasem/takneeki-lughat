@@ -311,7 +311,7 @@
 {"id":"atom.physics","en":"atom","ur":"جوہر","fields":["Physics"],"note":"Plural (oblique): جوہروں","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
 {"id":"at-regular-intervals.physics","en":"at regular intervals","ur":"برابر وقفوں پر","fields":["Physics"],"by":"aasem","added":"2026-11-10T09:56:28.772Z","updated":"2026-11-10T09:56:28.772Z"},
 {"id":"attenuation.mathematics","en":"attenuation","ur":"تضعیف","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:37:57.758Z"},
-{"id":"attenuation-constant.mathematics","en":"attenuation constant","ur":"تضعیفی مستقل / تقلیلی مستقل","fields":["Mathematics"],"note":"Of waves.","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:55:39.922Z"},
+{"id":"attenuation-constant.mathematics","en":"attenuation constant","ur":"تضعیفی مستقل / تقلیلی مستقل","fields":["Mathematics"],"note":"Of waves.","by":"aasem","added":"2026-11-10T09:37:57.758Z","updated":"2026-11-10T09:55:39.922Z","flag":true},
 {"id":"atto.mathematics","en":"atto-","ur":"اٹو","fields":["Mathematics"],"note":"SI prefix, ×10⁻¹⁸","by":"aasem","added":"2026-11-10T09:55:39.922Z","updated":"2026-11-10T09:55:39.922Z"},
 {"id":"attracting-2-cycle.mathematics","en":"attracting 2-cycle","ur":"کششی 2 چکری","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"attractive-force.mathematics","en":"attractive force","ur":"قوتِ کشش","fields":["Mathematics"],"note":"an attractive force acts — قوتِ کشش عمل کرتی ہے","by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
