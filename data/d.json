@@ -84,7 +84,7 @@
 {"id":"dependent-variable.mathematics","en":"dependent variable","ur":"تابع متغیرہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:59:16.081Z"},
 {"id":"dependent-voltage-source.mathematics","en":"dependent voltage source","ur":"تابع منبعِ دباؤ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:57:56.870Z"},
 {"id":"deposit.mathematics","en":"deposit","ur":"چڑھانا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"derivation.mathematics","en":"derivation","ur":"اشتقاق، اشتقاقایت، اشتقاقاً، استنباط، استخراج","fields":["Mathematics"],"note":"Suggestions: اشتقاق کا مطلب ہے شق حاصل کرنا","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"derivation.mathematics","en":"derivation","ur":"اشتقاق، اشتقاقایت، اشتقاقاً، استنباط، استخراج","fields":["Mathematics"],"note":"Suggestions: اشتقاق کا مطلب ہے شق حاصل کرنا","by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"derivative.mathematics-physics","en":"derivative","ur":"تفرق","fields":["Physics","Mathematics"],"note":"Plural: تفارق","by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
 {"id":"derivative-test.mathematics","en":"derivative test","ur":"تفرقی پرکھ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:59:16.081Z","updated":"2026-11-10T09:59:16.081Z"},
 {"id":"derive.mathematics","en":"derive","ur":"اخذ کرنا","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
