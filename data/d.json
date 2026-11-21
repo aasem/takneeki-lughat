@@ -108,7 +108,7 @@
 {"id":"develop.mathematics","en":"develop","ur":"تیار","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
 {"id":"diagonal.mathematics","en":"diagonal","ur":"وتر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
 {"id":"diagonalizable.physics","en":"diagonalizable","ur":"وتر پذیر","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T09:54:08.559Z"},
-{"id":"diagonalization.physics","en":"diagonalization","ur":"وترئت، وترانہ کاری، وتری سازی / وتریت","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T09:54:08.559Z"},
+{"id":"diagonalization.physics","en":"diagonalization","ur":"وترئت، وترانہ کاری، وتری سازی / وتریت","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T09:54:08.559Z","flag":true},
 {"id":"diagonalize.physics","en":"diagonalize","ur":"وتری بنانا","fields":["Physics"],"note":"can be diagonalized — وتری بنایا جا سکتا ہے","by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
 {"id":"diagonalizing-matrix.physics","en":"diagonalizing matrix","ur":"وتر کار قالب، وتری ساز قالب","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"diagonally-dominant.physics","en":"diagonally dominant","ur":"وتری غالب","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
