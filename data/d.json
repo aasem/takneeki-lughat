@@ -1,6 +1,6 @@
 [
 {"id":"dagger.physics","en":"dagger","ur":"خنجر","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
-{"id":"damage.mathematics","en":"damage","ur":"تباہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"damage.mathematics","en":"damage","ur":"تباہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"damped.mathematics","en":"damped","ur":"قصری / مقصور","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
 {"id":"damped-motion.mathematics","en":"damped motion","ur":"قصری حرکت / مقصور حرکت","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
 {"id":"damped-natural-frequency.mathematics","en":"damped natural frequency","ur":"مقصور قدرتی تعدد","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:54:08.559Z","updated":"2026-11-10T09:54:08.559Z"},
