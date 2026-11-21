@@ -5,7 +5,7 @@
 {"id":"damped-motion.mathematics","en":"damped motion","ur":"قصری حرکت / مقصور حرکت","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
 {"id":"damped-natural-frequency.mathematics","en":"damped natural frequency","ur":"مقصور قدرتی تعدد","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:54:08.559Z","updated":"2026-11-10T09:54:08.559Z"},
 {"id":"damped-wave.mathematics","en":"damped wave","ur":"قصری موج / مقصور موج","fields":["Mathematics"],"note":"Plural: قصری امواج / مقصور امواج","by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
-{"id":"damping-constant.mathematics","en":"damping constant","ur":"تقصیری مستقل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
+{"id":"damping-constant.mathematics","en":"damping constant","ur":"تقصیری مستقل","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z","flag":true},
 {"id":"damping-ratio.mathematics","en":"damping ratio","ur":"تقصیری تناسب","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:51:14.679Z","updated":"2026-11-10T09:51:14.679Z"},
 {"id":"darwin.physics","en":"Darwin","ur":"ڈارون","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"dashpot.mathematics","en":"dashpot","ur":"روک،روکُو، جاذب","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
