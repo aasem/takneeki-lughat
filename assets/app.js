@@ -1,7 +1,7 @@
 import {
   FIELDS, cleanEn, cleanUr, enKey, urKey, fieldsOf, makeId, shardFor, validateEntry,
   findConflicts, normaliseEntry, serialiseShard,
-} from "./core.js?v=20261115a";
+} from "./core.js?v=20261122a";
 
 // ---------------------------------------------------------------- config
 const REPO = "aasem/takneeki-lughat";
@@ -68,9 +68,15 @@ async function gh(path, { method = "GET", body, accept = "application/vnd.github
  * re-read and re-check from scratch — so duplicates can't slip in via a race.
  */
 async function commitShards(mutate, message) {
-  for (let attempt = 1; attempt <= 4; attempt++) {
-    const ref = await gh(`/repos/${REPO}/git/ref/heads/${BRANCH}`);
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  let staleHead = null;           // head our last rejected attempt was built on
+  const deadline = Date.now() + 45000;
+  for (let attempt = 1; Date.now() < deadline; attempt++) {
+    // `?t=` defeats any intermediary cache; GitHub's ref reads can also lag a
+    // moment behind a fresh push, so if we see the head that just failed, wait.
+    const ref = await gh(`/repos/${REPO}/git/ref/heads/${BRANCH}?t=${Date.now()}`);
     const head = ref.object.sha;
+    if (head === staleHead) { await sleep(500 + Math.random() * 700); continue; }
     const commit = await gh(`/repos/${REPO}/git/commits/${head}`);
     const read = async p => {
       try {
@@ -90,11 +96,12 @@ async function commitShards(mutate, message) {
       await gh(`/repos/${REPO}/git/refs/heads/${BRANCH}`, { method: "PATCH", body: { sha: newCommit.sha, force: false } });
       return { changed, sha: newCommit.sha };
     } catch (e) {
-      if (e.status === 422 && attempt < 4) { await new Promise(r => setTimeout(r, 400 * attempt)); continue; }
-      throw e;
+      if (e.status !== 422) throw e;
+      staleHead = head;           // someone else pushed first: re-read and redo
+      await sleep(300 + Math.random() * 900 * Math.min(attempt, 4));
     }
   }
-  throw new Error("The dictionary is busy — please try again.");
+  throw new UserError("Many people are saving at once. Please tap again in a moment.");
 }
 
 // ---------------------------------------------------------------- loading
