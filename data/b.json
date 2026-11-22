@@ -25,7 +25,7 @@
 {"id":"beam.mathematics","en":"beam","ur":"شہتیر","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:49:08.266Z","updated":"2026-11-10T09:49:08.266Z"},
 {"id":"beam-solid-angle.mathematics","en":"beam solid angle","ur":"ٹھوس زاویہ نقش","fields":["Mathematics"],"note":"Antenna.","by":"aasem","added":"2026-11-10T09:57:56.870Z","updated":"2026-11-10T09:57:56.870Z"},
 {"id":"beam-solid-angle-antenna.mathematics","en":"beam solid angle (antenna)","ur":"اخراجی ٹھوس زاویہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
-{"id":"beats.mathematics","en":"beats","ur":"تھاپ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
+{"id":"beats.mathematics","en":"beats","ur":"تھاپ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z","flag":true},
 {"id":"beautiful-of-english-writing.physics","en":"beautiful (of English writing)","ur":"شائستہ","fields":["Physics"],"by":"aasem","added":"2026-11-10T09:49:08.266Z","updated":"2026-11-10T09:49:08.266Z","flag":true},
 {"id":"behavior.mathematics","en":"behavior","ur":"رویہ","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:49:08.266Z","updated":"2026-11-10T09:49:08.266Z"},
 {"id":"bell.mathematics","en":"bell","ur":"جرس","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:49:08.266Z","updated":"2026-11-10T09:49:08.266Z"},
