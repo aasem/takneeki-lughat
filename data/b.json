@@ -50,7 +50,7 @@
 {"id":"binary.mathematics","en":"binary","ur":"ثنائی","fields":["Mathematics"],"note":"Source note: binary code, binary digit and binary arithmetic need to change in the digital book.","by":"aasem","added":"2026-11-10T09:49:08.266Z","updated":"2026-11-10T09:49:08.266Z","flag":true},
 {"id":"binary-coded-decimal-bcd.mathematics","en":"binary-coded decimal (BCD)","ur":"اعشاری اعداد کی دہری علامتیں","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T10:02:51.475Z"},
 {"id":"binary-data.mathematics","en":"binary data","ur":"ثنائی مواد","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:49:08.266Z","updated":"2026-11-10T09:49:08.266Z","flag":true},
-{"id":"binary-number.mathematics","en":"binary number","ur":"ثنائی عدد","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:49:08.266Z","updated":"2026-11-10T09:49:08.266Z"},
+{"id":"binary-number.mathematics","en":"binary number","ur":"ثنائی عدد","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:49:08.266Z","updated":"2026-11-10T09:49:08.266Z","flag":true},
 {"id":"binary-search.mathematics","en":"binary search","ur":"ثنائی تلاش","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T09:57:56.870Z","updated":"2026-11-10T09:57:56.870Z"},
 {"id":"binding-energy.physics","en":"binding energy","ur":"بندشی توانائی","fields":["Physics"],"by":"aasem","added":"2026-11-10T08:52:19.802Z","updated":"2026-11-10T08:52:19.802Z"},
 {"id":"binomial.mathematics","en":"binomial","ur":"ثنائی","fields":["Mathematics"],"by":"aasem","added":"2026-11-10T03:04:48.789Z","updated":"2026-11-10T03:04:48.789Z"},
